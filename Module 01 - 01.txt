@@ -1,0 +1,23 @@
+FIRST CLOUD JOURNEY BOOSCAMP 2025 
+_______________________________________________________________
+Module 01 - 01: Điện toán đám mây là gì?
+	- Tổng quan: 
+	- Các khái niệm về điện toán đám mây? 
+- Điện toán đám mây là việc phân phối các tài nguyên CNTT theo nhu cầu của người dùng qua Internet, và được tính theo chi phí theo nhu cầu và mức độ sử dụng.
+	- Lợi ích của điện toán đám mây
+- Sử dụng bao nhiêu -> Tính tiền bấy nhiêu -> Tối ưu hóa chi phí sử dụng. 
+- Tăng {tốc độ} phát triển -> các tính năng tự động hóa -> được quản trị bởi nhà cung cấp dịch vụ. 
+- Linh hoạt thêm bớt tài nguyên tùy ý.
+- Mở rộng quy mô ứng dụng lên toàn cầu. 
+_______________________________________________________________
+Module 01 - 02: AWS, Điều gì tạo nên sự khác biệt?
+
+- Nhà cung cấp hạ tầng Cloud dẫn đầu trong 13 năm liên tiếp. 
+- Khác biệt về {tầm nhìn} và {văn hóa}
+- Triết lí của AWS: Khách hàng sẽ càng ngày càng trả ít tiền hơn cho cùng dịch vụ cũng như tính năng và tài nguyên sử dụng. Khách hàng sử dụng càng nhiều thì giá sẽ giảm theo AWS, 
+- Đưa việc mang lại giá trị thực sự cho khách hàng lên hàng đầu trong tất cả các nguyên tắc lãnh đạo {Leadership Principle}.
+ 
+	+ [Customer Obsession]: Đặt lợi ích khách hàng ưu tiên hàng đầu, như nhân viên của AWS sẽ không bị nặng về doanh số bán hàng -> tư vấn giúp khách hàng tối ưu được chi phí và luôn đứng trong vai trò của khách hàng.
+	+ [Ownership]: Làm việc như người sở hữu công ty, luôn tìm cách tốt nhất để phát triển công ty, chứ không phải làm việc cho lợi ích cá nhân để phát triển bản thân và gây thiệt hại cho công ty, do đó nó sẽ không đem lại lợi ích cho cả hai. 
+	+ [Invent and Simplify]: Delivery and Result: Mang lại giá trị thực sự cho khách hàng -> Giúp khách hàng thành công -> Làm việc cho công ty như là làm việc cho chính mình -> Kết quả là điều hiển nhiên phải tới 
+
