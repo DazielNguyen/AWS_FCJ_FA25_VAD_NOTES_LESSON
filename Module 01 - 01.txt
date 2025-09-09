@@ -60,7 +60,36 @@ _______________________________________________________________
 Module 01 - 05: Công cụ Quản Lý AWS Services
 [AWS Management Console - Root Login]
 
+- Cách đăng nhập: 2 cơ chế
+	+ Root User: Tài khoản dùng đăng kí AWS account đầu tiên, cực kì quan trọng, hạn chế dùng root account -> làm bảo mật 2 lớp -> MFA -> Lấp lại không dùng nữa
+	+ IAM User: Nó là 1 tài khoản con giúp các user quản lí cũng như truy xuất các tài nguyên cần dùng. 
+	+ login account xong tạo IAM user -> Chỉ cần cung cấp account ID trong Root Account.
+ => Services cung cấp các dịch vụ -> Mỗi service có trang management riêng cho phép chúng ta sử dụng các tính năng (feature) của dịch vụ đó. 
 
+- Support Center: Tạo ra các Support Case -> yêu cầu đội ngũ AWS hỗ trợ.
+- Cách chạy: 
+
+USER -> PASSWORD -> AWS MANAGEMENT CONSOLE -> AWS SERVICES ENDPOINT
+
+[AWS Command Line Interface (CLI)]
+- Cách chạy 
+
+USER -> ACCESS KEY / SECRET ACCESS KEY -> AWS COMMAND LINE INTERFACE (AWS CLI) -> AWS SERVICE ENDPOINT
+
+- Cho phép triển khai các chức năng tương đương các chức năng như các dịch vụ AWS trên trình duyệt. 
+
+[AWS SDK - Software Development Kit]
+- AWS SDK giúp đơn giản hóa trong việc xây dựng các ứng dụng của mình, muốn tận dụng được các dịch vụ và tính năng của AWS cung cấp
+- AWS SDK có bộ thư viện hỗ trợ nhiều ngôn ngữ khác nhau
+	+ Gọi API request 
+	+ Quản lí thông tin xác thực (management credentials). 
+	+ Thử lại (Retry)
+ 	+ Sắp xếp dữ liệu (Data Marshaling - chuẩn hóa dữ liệu) 
+	+ Tuần tự hóa(Serialization - Chuyển objects sang bytes stream)
+	+ Giải mã hóa (Deserialization - Chuyển Bytes stream về lại object)
+	
+_______________________________________________________________
+Module 01 - 06: Tối ưu hóa chi phí trên AWS
 
 
 
