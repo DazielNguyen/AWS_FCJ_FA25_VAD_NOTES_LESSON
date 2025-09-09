@@ -128,7 +128,35 @@ https://calculator.aws/#/
 -> Có thể nâng cấp các gói hỗ trợ trong thời gian ngắn để đẩy nhanh tốc độ hỗ trợ khi có sự cố quan trọng cần xử lý nhanh. 
 
 _______________________________________________________________
-Module 01 - 07: 
+Module 01 - 07: Thực hành và nghiên cứu bổ sung. 
+
+Lab: 000001 
+ - Tạo tài khoản AWS 
+ - Thiết lập MFA cho tài khoản AWS(Root) 
+ - Tài khoản và Nhóm Admin
+ - Hỗ trợ xác thực tài khoản.
+
+Lab: 000007 
+ - Tạo Cost Budget
+ - Tạo Usage Budget 
+ - Tạo Reservation Budget
+ - Tạo Saving plans Budget. 
+
+Lab: 000009 
+ - Đọc và thấy sự khác nhau giữa các gói hỗ trợ của AWS. 
+ - Truy cập AWS Support. 
+ - Quản lí yêu cầu hỗ trợ. 
+
+[Nghiên cứu bổ sung] - AWS Well Architected Framework (Hơn 100 câu hỏi)
+ - Tìm hiểu về các: 
+				+ Khái nghiệm 
+				+ Nguyên tắc thiết kế
+				+ Biện pháp tốt nhất về kiến trúc để thiết kế và vận hành hệ thống của bạn trong môi trường điện toán đám mây. 
+
+- Sử dụng Framework bằng cách trả lời các câu hỏi. 
+	+ Cần biết được mức độ phù hợp giữa kiến trúc của mình với các phương pháp tốt nhất được khuyến nghị. 
+- Khi sử dụng AWS WAF tích hợp trên AWS Management Console sẽ có hướng dẫn để cải thiện kiến trúc hiện tại của mình. 
+
 
 
 
