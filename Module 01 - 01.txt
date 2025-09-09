@@ -90,9 +90,45 @@ USER -> ACCESS KEY / SECRET ACCESS KEY -> AWS COMMAND LINE INTERFACE (AWS CLI) -
 	
 _______________________________________________________________
 Module 01 - 06: Tối ưu hóa chi phí trên AWS
+- Lựa chọn cấu hình tài nguyên và nơi lưu trữ dữ liệu phù hợp. 
+- Các phương thức thanh toán giảm giá: 
+	+ Reserved instance: Xài bao nhiêu tính bấy nhiêu
+	+ Saving plan: Cam kết lâu dài, cam kết như 1 năm , 2 năm sẽ có mức discount tương ứng
+	+ Spot: Tài nguyên tạm, cho thuê lượng tài nguyên có sẵn đó, với chi phí rất thấp, nhưng nếu khi người bán cần và cần mở rộng thì cái server đó có thể bị lấy lại bất cứ lúc nào. 
+- Xóa các tài nguyên không sử dụng, bật tự động các tài nguyên không cần chạy 24/7. 
+- Tận dụng các dịch vụ serverless. -> Phi máy chủ, nó sẽ các dịch vụ không cần máy chủ. 
 
+[Kiến trúc tối ưu để giải quyết yêu cầu của doanh nghiệp]
+- Dữ liệu nên đặt trong dịch vụ lưu trữ nào? -> Đặt ở đó bao lâu -> Bao lâu thì xuống cơ sở dữ liệu thứ cấp -> Cơ sở dữ liệu của mình như cái schema, cái lược đồ/ được thiết kế như thế nào -> Chọn loại cơ sở dữ liệu nào phù hợp -> Mình có nên sự dụng Cloud Native được quản lí bởi AWS hay không? -> Hay là dùng một dịch vụ open-sources chạy trên một máy chủ ảo của AWS 
+=>>> Tùy vào mỗi dự án, Mỗi dự án và yêu cầu có ràng buộc riêng, do đó mình có thể tối ưu được việc chi phí trên AWS. 
+  
 
+- Cài đặt sử dụng AWS Budget (Vd: Tui dùng $10 thì gửi cảnh báo cho tui, hoặc gửi mức chi phí cảnh báo theo nhu cầu của mình) -> Có bài thực hành cho phần này.
+- Quản lí chi phí theo phòng ban, ứng dụng với Cost Allocation Tag. (Vd: 1 phòng nhiều người, thì sẽ biết được ai dùng bao nhiêu, cả phòng ban dùng bao nhiêu.)
+- Tối ưu hóa chi phí là việc làm LIÊN TỤC, liên tục theo dõi để tối ưu hóa chi phí. 
 
+*** Hai cách tạo ra giá trị cho doanh nghiệp của mình: 
+	GIÚP DOANH NGHIỆP KIẾM TIỀN
+	GIÚP DOANH NGHIỆP TIẾT KIỆM TIỀN
+
+[CÔNG CỤ TÍNH TOÁN CHI PHÍ]
+
+https://calculator.aws/#/
+
+- Cho phép tạo các estimate các dịch vụ thông dụng.
+- Có thể chia sẻ các estimate cho người khác. 
+- Chi phí sẽ khác biệt theo từng Region, theo từng dịch vụ, theo từng cấu hình mà mình mong muốn. 
+
+[Working with AWS Support]
+- AWS have 4 main packages support: 
+	+ Basic (Explore): Khám các tính năng và dịch vụ gì?
+	+ Developer (Test / Dev): Xây dựng môi trường Test và Dev, Yêu cầu về mặt kĩ thuật 
+	+ Business (Production): 
+	+ Enterprise (Large Enterprise): Cho các doanh nghiệp lớn. 
+-> Có thể nâng cấp các gói hỗ trợ trong thời gian ngắn để đẩy nhanh tốc độ hỗ trợ khi có sự cố quan trọng cần xử lý nhanh. 
+
+_______________________________________________________________
+Module 01 - 07: 
 
 
 
