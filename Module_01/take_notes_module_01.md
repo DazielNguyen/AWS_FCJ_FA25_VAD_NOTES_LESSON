@@ -40,30 +40,36 @@ _______________________________________________________________
 ## **Module 01 - 04: Hạ tầng toàn cầu của AWS** 
 - Một trung tâm dữ liệu có thể chứa hàng chục ngàn máy chủ và các thiết bị phần cứng của AWS đều được dùng các thiết bị có thiết kế được tối ưu hóa riêng cho hoạt động của AWS.
 
-[Availability Zone(AZ)]: Bao gồm một hay nhiều trung tâm dữ liệu (Data Center), các AZ được thiết kế đồng thời để không xảy ra sự cố ảnh hưởng đồng thời cả 2 AZ một lúc (fault isolation)
+- ***[Availability Zone(AZ)]***: Bao gồm một hay nhiều trung tâm dữ liệu (Data Center), các AZ được thiết kế đồng thời để không xảy ra sự cố ảnh hưởng đồng thời cả 2 AZ một lúc (fault isolation)
 
-- Giữa 2 AZ kết nối riêng -> tốc độ cao.
-- Nhưng triển khai dịch vụ và ứng dụng thì tối thiệu phải trên 2 AZ
+	+ Giữa 2 AZ kết nối riêng -> tốc độ cao.
+	+ Nhưng triển khai dịch vụ và ứng dụng thì tối thiệu phải trên 2 AZ
 
-[Region]: Bao gồm tối thiểu 3 Availability Zone. 
-- Hiện tại có hơn 25 Region trên toàn cầu. 
-- Region được kết nối với nhau bởi mạng -> backbone của AWS. 
-- Default data & services ở các region -> độc lập với nhau (Trừ một số dịch vụ ở quy mô global)
+- ***[Region]***: Bao gồm tối thiểu 3 Availability Zone. 
+	+ Hiện tại có hơn 25 Region trên toàn cầu. 
+	+ Region được kết nối với nhau bởi mạng -> backbone của AWS. 
+	+ Default data & services ở các region -> độc lập với nhau (Trừ một số dịch vụ ở quy mô global)
 
-Mind map dễ hiểu. 
-AZ: Availability Zone
-DC: Data Center
+- ***Mind map dễ hiểu:***
+
+*Chú thích*
+
+**AZ**: Availability Zone
+
+**DC**: Data Center
+
 
 				      [REGION]
 				       /   \	
  				      AZ    AZ
 	             	 /  \  / \
                    DC   DC DC DC
-- Người dùng gần các region nào thì dùng gần region đó -> giảm độ trễ 
-- Generative AI -> Region US
-- Lựa chọn Region thường sẽ liên quan đến chi phí.
-- Quy mô lớn -> Khách hàng nhiều -> Giá thành rẻ. 
-[Edge Locations]: Là mạng lưới trung tâm dữ liệu thứ cấp, được thiết kế sự dụng các dịch vụ mạng biên
+- 	Người dùng gần các region nào thì dùng gần region đó -> giảm độ trễ 
+- 	Generative AI -> Region US
+- 	Lựa chọn Region thường sẽ liên quan đến chi phí.
+- 	Quy mô lớn -> Khách hàng nhiều -> Giá thành rẻ. 
+
+- ***[Edge Locations]***: Là mạng lưới trung tâm dữ liệu thứ cấp, được thiết kế sự dụng các dịch vụ mạng biên
 	+ CloudFront (CDN)
 	+ Web Application Firewall (WAF)
 	+ Route 53 (DNS Service)
