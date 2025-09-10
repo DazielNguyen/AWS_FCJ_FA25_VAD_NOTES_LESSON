@@ -17,13 +17,24 @@ Sự khác biệt của AWS:
 - Triết lí của AWS: Khách hàng sẽ càng ngày càng trả ít tiền hơn cho cùng dịch vụ cũng như tính năng và tài nguyên sử dụng => Khách hàng sử dụng càng nhiều thì giá sẽ giảm theo AWS.
 - Đưa việc mang lại giá trị thực sự cho khách hàng lên hàng đầu trong tất cả các nguyên tắc lãnh đạo {**Leadership Principle**}.
  
-	+ [Customer Obsession]: Đặt lợi ích khách hàng ưu tiên hàng đầu, như nhân viên của AWS sẽ không bị nặng về doanh số bán hàng -> tư vấn giúp khách hàng tối ưu được chi phí và luôn đứng trong vai trò của khách hàng.
-	+ [Ownership]: Làm việc như người sở hữu công ty, luôn tìm cách tốt nhất để phát triển công ty, chứ không phải làm việc cho lợi ích cá nhân để phát triển bản thân và gây thiệt hại cho công ty, do đó nó sẽ không đem lại lợi ích cho cả hai. 
-	+ [Invent and Simplify]: Delivery and Result: Mang lại giá trị thực sự cho khách hàng -> Giúp khách hàng thành công -> Làm việc cho công ty như là làm việc cho chính mình -> Kết quả là điều hiển nhiên phải tới 
+	+ ***[Customer Obsession]***: Đặt lợi ích khách hàng ưu tiên hàng đầu, như nhân viên của AWS sẽ không bị nặng về doanh số bán hàng -> tư vấn giúp khách hàng tối ưu được chi phí và luôn đứng trong vai trò của khách hàng.
+	+ ***[Ownership]***: Làm việc như người sở hữu công ty, luôn tìm cách tốt nhất để phát triển công ty, chứ không phải làm việc cho lợi ích cá nhân để phát triển bản thân và gây thiệt hại cho công ty, do đó nó sẽ không đem lại lợi ích cho cả hai. 
+	+ ***[Invent and Simplify]***: Delivery and Result: Mang lại giá trị thực sự cho khách hàng -> Giúp khách hàng thành công -> Làm việc cho công ty như là làm việc cho chính mình -> Kết quả là điều hiển nhiên phải tới 
 _______________________________________________________________
 ## **Module 01 - 03: Bắt đầu hành trình lên mây như thế nào?**
 
--   
+Làm sao để thành một bầu trời đầy sao trong tương lai của mình? 
+
+- AWS luôn cung cấp nhiều khóa học nhất cho người học và những khóa học đều đem lại chiều sâu nhất trong tất cả các nhà cung cấp dịch vụ. Do đó mình có thể tự học để có thể trở thành chuyên gia về nền tảng Cloud của AWS. 
+- Học hỏi từ những người bạn mới hoặc các anh chị đi trước về nền tảng này thì => Không bao giờ thua thiệt, chỉ thua thiệt nếu không học và không hành động. => Solution: Kết bạn mới (nhưng phải đúng bạn đúng người). 
+- Làm mọi thứ một mình => Không đem lại hiệu quả cao => không nên bó buộc trong những bài lab của các nhà cung cấp dịch vụ => Vì tự trải nghiệm, tự mắc lỗi, sẽ dễ dàng có những kinh nghiệm gần gũi và thực tế nhất
+- Đăng kí tài khoản AWS sớm để được trải nghiệm thông qua **Free Tier**.
+- Các nhà cung cấp khóa học thứ 3 uy tín: 
+	+ https://udemy.com/ 
+	+ https://cloudguru.com/
+- Lộ trình học AWS: 
+	+ https://aws.amazon.com/vi/training/learning-paths/
+- AWS chú trọng vào những dự án workshop thông qua dùng các dịch vụ của AWS, những bài lab cá nhân sẽ có giá trị sau này cho bản thân, để sau này có thể show cho các nhà tuyển dụng cũng như những dự án chân thực và giá trị mà bản thân đem lại cho thị trường. 
 _______________________________________________________________
 
 ## **Module 01 - 04: Hạ tầng toàn cầu của AWS** 
