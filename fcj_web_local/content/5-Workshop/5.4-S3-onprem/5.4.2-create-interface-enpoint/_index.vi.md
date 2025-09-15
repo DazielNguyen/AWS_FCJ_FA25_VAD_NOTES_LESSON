@@ -1,9 +1,10 @@
+---
 title : "Tạo một S3 Interface endpoint"
 date : "2025-09-09"
 weight : 2
 chapter : false
 pre : " <b> 5.4.2 </b> "
-
+---
 Trong phần này, bạn sẽ tạo và kiểm tra Interface Endpoint S3 bằng cách sử dụng môi trường truyền thống mô phỏng.
 
 1. Quay lại Amazon VPC menu. Trong thanh điều hướng bên trái, chọn Endpoints, sau đó click Create Endpoint.
