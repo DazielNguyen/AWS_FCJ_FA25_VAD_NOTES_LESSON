@@ -8,12 +8,15 @@
     + Các tài nguyên, các máy chủ, các cơ sở dữ liệu, các thiết bị cân bằng tải sẽ được đặt ở đâu trong lớp mạng ảo này?
     + Lớp mạng ảo này liên quan gì đến Availability Zone trong Module 1?
 - Mô hình trình bày mạng ảo: 
-'''
+
             AWS Cloud - Account: 3345-2334-1232 "Tài khoản có Unique ID gồm 12 số"
             ||
             Region Singapore: ap-southeast-1 (tối thiểu gồm 3 AZ)
             ||
-'''
+
+
+***Kiến trúc cơ bản của VPC***
+
 ![Kiến trúc VPC cơ bản](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20basic.png)
 
 
