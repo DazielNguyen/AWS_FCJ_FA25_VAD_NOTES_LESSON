@@ -5,7 +5,10 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-# Week 1 Worklog - 2025-09-07 to 2025-09-12
+{{% notice warning %}}
+⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+{{% /notice %}}
+
 ### Week 1 Objectives:
 
 - Connect with teammates and get acquainted with the Champions in the First Cloud Journey.
