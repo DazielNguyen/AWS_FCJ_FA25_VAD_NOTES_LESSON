@@ -1,9 +1,10 @@
+---
 title : "Introduction"
 date : "2025-09-09"
 weight : 1
 chapter : false
 pre : " <b> 5.1. </b> "
-
+---
 #### VPC endpoints
 
 - **VPC endpoints** are virtual devices. They are horizontally scaled, redundant, and highly available VPC components. They allow communication between your compute resources and AWS services without imposing availability risks.
