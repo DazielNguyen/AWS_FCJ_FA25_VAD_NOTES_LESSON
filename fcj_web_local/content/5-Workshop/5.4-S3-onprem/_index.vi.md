@@ -1,9 +1,10 @@
+---
 title : "Truy cập S3 từ môi trường truyền thống"
 date : "2025-09-09"
 weight : 4
 chapter : false
 pre : " <b> 5.4. </b> "
-
+---
 #### Tổng quan
 
 - Trong phần này, bạn sẽ tạo một Interface Endpoint để truy cập Amazon S3 từ môi trường truyền thống mô phỏng. Interface Endpoint sẽ cho phép bạn định tuyến đến Amazon S3 qua kết nối VPN từ môi trường truyền thống mô phỏng của bạn.
