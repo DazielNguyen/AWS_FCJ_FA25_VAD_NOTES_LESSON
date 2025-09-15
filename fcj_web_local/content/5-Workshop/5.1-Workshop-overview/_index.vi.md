@@ -1,9 +1,10 @@
+---
 title : "Giới thiệu"
 date : "2025-09-09"
 weight : 1
 chapter : false
 pre : " <b> 5.1. </b> "
-
+---
 #### Giới thiệu về VPC Endpoint
 
 - Điểm cuối VPC (endpoint) là thiết bị ảo. Chúng là các thành phần VPC có thể mở rộng theo chiều ngang, dự phòng và có tính sẵn sàng cao. Chúng cho phép giao tiếp giữa tài nguyên điện toán của bạn và dịch vụ AWS mà không gây ra rủi ro về tính sẵn sàng.
