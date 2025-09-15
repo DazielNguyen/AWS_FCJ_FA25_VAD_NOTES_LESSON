@@ -14,7 +14,7 @@
             Region Singapore: ap-southeast-1 (tối thiểu gồm 3 AZ)
             ||
 '''
-![alt text](http://url/to/img.png)
+![Kiến trúc VPC cơ bản](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20basic.png)
 
 
 
