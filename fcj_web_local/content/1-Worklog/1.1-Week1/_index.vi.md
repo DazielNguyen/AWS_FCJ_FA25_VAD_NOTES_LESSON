@@ -5,7 +5,10 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-# Worklog Tuần 1 - 2025-09-07 to 2025-09-12
+{{% notice warning %}}
+⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+{{% /notice %}}
+
 ### Mục tiêu tuần 1:
 
 - Kết nối với những bạn trong team và làm quen với các anh chị Champion trong First Cloud Journey.
