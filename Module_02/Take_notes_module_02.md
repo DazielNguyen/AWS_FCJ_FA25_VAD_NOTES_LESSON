@@ -22,7 +22,7 @@
 
 ***Kiến trúc cơ bản của VPC:***
 
-![Kiến trúc VPC cơ bản](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20basic.png)
+![Kiến trúc VPC cơ bản](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.%20VPC%20basic.png)
 
 ***Một số tính chất chính và khái niệm của VPC cần nhớ:***
 - VPC nằm trong 1 **Region**, khi tạo VPC cần khai báo 1 lớp mạng **CIDR** IPPv4 (bắt buộc) và IPv6 (tùy chọn).
@@ -33,7 +33,7 @@
 
 ***Kiến trúc phân tách các môi trường VPC riêng biệt:***
 
-![Kiến trúc VPC phân tách](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20ph%C3%A2n%20t%C3%A1ch.png)
+![Kiến trúc VPC phân tách](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.%20VPC%20ph%C3%A2n%20t%C3%A1ch.png)
 
 ### 1.1 VPC - Subnets
 - **Subnets** được gọi là mạng con, Amazon VPC cho phép -> tạo nhiều mạng ảo và chia các mạng ảo này thành các mạng con **(Subnet)**.
@@ -56,7 +56,7 @@
     + Private thì ngược lại -> Không được đưa ra ngoài Internet.
 ***Kiến trúc cấu hình VPC khi đặt Subnet vào:***
 
-![Kiến trúc VPC - Subnets](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20subnets.png)
+![Kiến trúc VPC - Subnets](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.1%20VPC%20subnets.png)
 - Mỗi Subnets riêng biệt chỉ nằm trong 1 AZ riêng biệt.
 
 ***Làm sao để chúng ta tạo một cái Public Subnet, khi nào chúng ta gọi nó là Public Subnet và khi nào chúng ta gọi đó là Private Subnet? Phần 1.2 sẽ giải thích.*** 
@@ -67,7 +67,7 @@
 
 ***Hình ảnh minh họa***
 
-![Minh họa Default Route table](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20subnets.png)
+![Minh họa Default Route table](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.2%20Default%20Route%20table.jpg)
 
 
 ## **II. VPC Peering & Transit Gateway**
