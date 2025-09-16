@@ -56,7 +56,7 @@
     + Private thì ngược lại -> Không được đưa ra ngoài Internet.
 ***Kiến trúc cấu hình VPC khi đặt Subnet vào:***
 
-![Kiến trúc VPC - Subnets](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20ph%C3%A2n%20t%C3%A1ch.png)
+![Kiến trúc VPC - Subnets](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20subnets.png)
 - Mỗi Subnets riêng biệt chỉ nằm trong 1 AZ riêng biệt.
 
 ***Làm sao để chúng ta tạo một cái Public Subnet, khi nào chúng ta gọi nó là Public Subnet và khi nào chúng ta gọi đó là Private Subnet? Phần 1.2 sẽ giải thích.*** 
