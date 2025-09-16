@@ -89,7 +89,7 @@
 
 ***Kiến trúc VPC nâng cao***
 
-![VPC nâng cao gồm EC2](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.2%20Default%20Route%20table.jpg)
+![VPC nâng cao gồm EC2](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.3%20VPC%20n%C3%A2ng%20cao%20g%E1%BB%93m%20EC2.png)
 
 ***Giải thích ảnh trên: ***
 - Trong này chúng ta tạo ra một máy chủ EC2 -> Máy chủ EC2 này sẽ được gán Elastic Network Interface -> ... Ở dưới
