@@ -35,6 +35,35 @@
 
 ![Kiến trúc VPC phân tách](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20ph%C3%A2n%20t%C3%A1ch.png)
 
+### 1.1 VPC - Subnets
+- **Subnets** được gọi là mạng con, Amazon VPC cho phép -> tạo nhiều mạng ảo và chia các mạng ảo này thành các mạng con **(Subnet)**.
+- VPC Subnet sẽ nằm trong 1 AZ (Availability Zone) cụ thể.
+- Khi tạo Subnet, chúng ta chỉ định CIDR cho mạng con đó và đây là một **tập hợp con của khối VPC CIDR**
+    + Vd: Cho mỗi **Quận** trong thành phố Hồ Chí Minh được gọi là mỗi **VPC**, thì trong mỗi **Quận** thì sẽ gồm nhiều **Phường** khác nhau thì đó được gọi là **Subnets** của từng **Quận** đó. => Đó còn được gọi là **tập hợp con của khối VPC CIDR**
+- Trong mỗi Subnet, AWS sẽ giữ **5 địa chỉ IP**. Ví dụ nếu Subnet có CIDR là 10.10.1.0/24
+    + Địa chỉ network (10.10.1.0)
+    + Địa chỉ broadcast (10.10.1.255)
+    + Địa chỉ cho bộ định tuyến (10.10.1.1)
+    + Địa chỉ cho DNS (10.10.1.2)
+    + Địa chỉ cho tính toán tương lai (10.10.1.3)
+
+- Phân loại VPC - Subnets
+    + Public subnet
+    + Private subnet 
+
+    => Bản chất của hai cái này là như nhau, tuy nhiên có quy ước riêng.
+    + Nếu đặt tên **"Public Subnet"**, cấu hình như **Public Subnet**, thì nếu đặt các máy chủ ảo vào vùng **Public** này thì nó sẽ được cho phép đi ra **ngoài Internet**
+    + Private thì ngược lại -> Không được đưa ra ngoài Internet.
+***Kiến trúc cấu hình VPC khi đặt Subnet vào:***
+
+![Kiến trúc VPC - Subnets](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20ph%C3%A2n%20t%C3%A1ch.png)
+- Mỗi Subnets riêng biệt chỉ nằm trong 1 AZ riêng biệt.
+
+***Làm sao để chúng ta tạo một cái Public Subnet, khi nào chúng ta gọi nó là Public Subnet và khi nào chúng ta gọi đó là Private Subnet? Phần 1.2 sẽ giải thích.*** 
+
+### 1.2 VPC - Route Table
+
+
 
 
 
