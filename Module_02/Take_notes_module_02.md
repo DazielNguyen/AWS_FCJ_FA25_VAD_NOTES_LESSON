@@ -33,7 +33,7 @@
 
 ***Kiến trúc phân tách các môi trường VPC riêng biệt:***
 
-![Kiến trúc VPC phân tách](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20basic.png)
+![Kiến trúc VPC phân tách](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20ph%C3%A2n%20t%C3%A1ch.png)
 
 
 
