@@ -54,7 +54,7 @@
     => Bản chất của hai cái này là như nhau, tuy nhiên có quy ước riêng.
     + Nếu đặt tên **"Public Subnet"**, cấu hình như **Public Subnet**, thì nếu đặt các máy chủ ảo vào vùng **Public** này thì nó sẽ được cho phép đi ra **ngoài Internet**
     + Private thì ngược lại -> Không được đưa ra ngoài Internet.
-***Kiến trúc cấu hình VPC khi đặt Subnet vào:***
+***Kiến trúc VPC Subnets:***
 
 ![Kiến trúc VPC - Subnets](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.1%20VPC%20subnets.png)
 - Mỗi Subnets riêng biệt chỉ nằm trong 1 AZ riêng biệt.
@@ -87,9 +87,9 @@
 - **Elastic IP address (EIP)** là một địa chỉ public IPv4 tĩnh, có thể liên kết với một Elastic Networl Interface. 
     + Khi không sử dụng, sẽ bị charge phí. (Để tránh lãng phí).
 
-***Kiến trúc VPC nâng cao***
+***Kiến trúc VPC ENI***
 
-![VPC nâng cao gồm EC2](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.3%20VPC%20n%C3%A2ng%20cao%20g%E1%BB%93m%20EC2.png)
+![VPC ENI gồm EC2](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.3%20VPC%20n%C3%A2ng%20cao%20g%E1%BB%93m%20EC2.png)
 
 ***Giải thích ảnh trên:***
 - Trong này chúng ta tạo ra một máy chủ EC2 -> Máy chủ EC2 này sẽ được gán Elastic Network Interface -> ... Ở dưới
@@ -121,9 +121,52 @@
 
     => Với tính năng S3 này của AWS tại sao không cung cấp cho đường đi nội bộ thì AWS mới tạo ra thêm tính năng VPC Gate Endpoint cho S3
 
-- S3 - VPC Gateway Endpoint
+- **S3 - VPC Gateway Endpoint**
     + Nó sẽ đi qua mạng riêng và thông qua kết nối với địa chỉ IP Private
+### 1.5 VPC - Internet Gateway
+- Ở trên đã giải thích về **khái niệm Public Subnets** rồi thì việc tạo ra máy chủ trong Public Subnet thì chúng ta muốn cái máy chủ đó đi ra **ngoài Internet**.
+- Tuy nhiên chúng ta chỉ gán địa chỉ IP vào thôi là chưa đủ mà chúng ta cần thực hiện tạo ra thêm 1 cái Internet Router cái tính năng đó còn được gọi là **Internet Gateway**
+- **Internet Gateway** là một thành phần của Amazon VPC có khả năng mở rộng quy mô theo **chiều ngang (scale out)** để đảm bảo các máy chủ (EC2 Instance) ở trong VPC có thể truyền thông tin ra ngoài Internet.
+- Khi sử dụng **Internet Gateway** thì chúng ta không phải lo về **băng thông** , lưu lượng hay số lượng kết nối cũng như không cần cấu hình tự động mở rộng autoscale , hoặc lo về vấn đề sẵn sàng high availability. 
+- **Internet Gateway** đơn giản hóa việc cấu hình network với môi trường truyền thống rất nhiều, nó là một router nhưng chúng ta không kết nối vô được,không có khái niệm remote vào được, nó cũng không cần cập nhật và làm gì cả. -> Đơn giản **Bật lên** rồi **Sử dụng**.
 
-## **II. VPC Peering & Transit Gateway**
+***Để muốn sử dụng **Internet Gateway** này, để cho máy chủ ảo của chúng ta ra ngoài được Internet thì sẽ như thế nào?***
+
+***Kiến trúc VPC Internet Gateway***
+
+![VPC Internet Gateway](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.5%20VPC%20Internet%20Gateway.png)
+
+***Giải thích cách để EC2 ra được Internet***
+- **Bước 1:** Tạo 1 cái Internet Route table hay được gọi là Internet Gateway.
+- **Bước 2:** Cấu hình cái bảng định tuyến tùy chỉnh (Custom Route table) của mình -> ta thấy rằng nó còn giữ lại cái định tuyến mặc định 10.10.0.0/16
+    + Tạo 1 cái mạng định tuyến mới được gọi là Destination 0.0.0.0/0 đại điện cho tất cả địa chỉ IP - Target của nó sẽ đi đến (igw-id) hay được gọi là cái ID của Internet Gateway 
+
+- **Bước 3:** Gán Custom Route table vào -> Public subnet -> Thì cái máy chủ của mình có thể đi ra ngoài Internet thông qua Internet Gateway và lấy IP Public của ENI.
+- Cấu hình đi ra ngoài Internet cần phải đáp ứng các tiêu chuẩn sau: 
+    + EC2 Instance -> Phải có IP Public
+    + Custom Route table -> Gắn vào cái Public Subnet -> Phải có đường định tuyến dẫn đến Internet Gateway
+    + Phải có Internet Gateway được tạo sẵn trong VCP.
+- Tuy nhiên trong thực tế, đa số các trường hợp chúng ta để máy chủ ảo của chúng ta nằm ở môi trường Private Subnet. 
+
+***Giả sử máy chủ của chúng ta nằm ở môi trường Private Subnet mà ra được Internet thì chúng ta làm như thế nào?*** 
+
+### 1.6 VPC - NAT Gateway
+- NAT Gatway cho phép các máy chủ ảo EC2 Instance trong Private Subnets có thể truy cập tới Internet hoặc các dịch vụ Internet khác. 
+- Chỉ chấp nhận kết nối **chiều ra** và không chấp nhận kết nối **chiều vào**.
+- Từ Private Subnets ra ngoài Internet thì -> **OK**
+- Từ ngoài Internet đi vào máy chủ ảo EC2 Instance của chúng ta tới Private Subnets thì -> **Không OK, không kết nối được**
+
+***Kiến trúc VPC NAT Gateway***
+
+![VPC NAT Gateway](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.6%20VPC%20NAT%20Gateway.png)
+
+***Giải thích cách Private Subnet ra Internet***
+- **Bước 1:** Máy chủ ảo EC2 không được đặt trong Public Subnet nữa mà giờ đây, máy chủ ảo EC2 được đặt trong -> Private Subnet -> Và chúng ta có 1 cái địa chỉ IP Private nằm trong Private Subnet này
+- **Bước 2:** Tạo NAT Gateway -> Nằm trong Public Subnet
+- **Bước 3:** Tạo thêm Custom Route table -> Cấu hình 1 cái định tuyến mới gọi là Destination 10.10.0.0/16 đại diện cho tất cả các địa chỉ IP - Target của nó sẽ đi đến (ngw-id) hay được gọi là ID của NAT Gateway 
+- Thì cái Custom Route table -> Gán vào Private Subnet -> Máy chủ EC2 sẽ kết nối với NAT Gateway -> Internet Gateway và từ đó đi ra được Internet
+
+## **II. VPC Security and Multi-VPC features**
+### 1.
 ## **III. VPN & Direct Connect**
 ## **IV. Elastic Load Balancing**
