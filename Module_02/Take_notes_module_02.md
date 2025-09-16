@@ -69,7 +69,38 @@
 
 ![Minh họa Default Route table](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.2%20Default%20Route%20table.jpg)
 
+- Route table sẽ được gán vào Subnet. 
+- Để tạo được Public Subnet, Subnets mà bên trong máy chủ có thể đi ra ngoài Internet, thì chúng ta phải tạo Custom Route table (Bảng định tuyến tùy chỉnh), tuy nhiên không thể xóa Default Route (VPC CIDR - Local), chỉ được thêm subnet chứ không xóa được Default Route. 
+### 1.3 VPC - Elastic Network Interface (ENI)
+- **Elastics Network Interface (ENI)** là một card ảo, chúng ta có thể chuyển sang các EC2 Instance khác.
+- Mỗi máy chủ ảo của chúng ta, khi bật máy chủ lên chúng ta tạo máy chủ ở trong VPC, thì máy chủ của chúng ta sẽ được **cấp một địa chỉ IP**, các địa chỉ IP này không được gán vào tài nguyên máy chủ, mà nó gán vào các card mạng ảo (Elastic Network Interface).
+- Tạo ra một máy chủ ảo thì đồng nghĩa chúng ta tạo ra một -> Elastics Network Interface
+- Nhưng cái máy chủ này có thể linh hoạt gắn vào những các mạng ảo khác, khá là thông dụng. 
+- Giải thích ví dụ dễ hiểu hơn: 
+    + Máy chủ ảo: Căn nhà của bạn 
+    + Card ảo: Số nhà của bạn. 
+    + Thì số nhà của bạn có thể tháo hoặc thay thế bằng một cái số nhà khác, hoặc cái số nhà cũ của bạn sẽ chuyển qua căn nhà khác. 
+- Khi chuyển sang một máy chủ mới, thì một card mạng ảo sẽ vẫn **duy trì**.
+    + Địa chỉ IP Private
+    + Địa chỉ Elastic IP address -> Là một địa chỉ public
+    + Địa chỉ MAC -> Là địa chỉ vật lí
+- **Elastic IP address (EIP)** là một địa chỉ public IPv4 tĩnh, có thể liên kết với một Elastic Networl Interface. 
+    + Khi không sử dụng, sẽ bị charge phí. (Để tránh lãng phí).
 
+***Kiến trúc VPC nâng cao***
+
+![VPC nâng cao gồm EC2](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.2%20Default%20Route%20table.jpg)
+
+***Giải thích ảnh trên: ***
+- Trong này chúng ta tạo ra một máy chủ EC2 -> Máy chủ EC2 này sẽ được gán Elastic Network Interface -> ... Ở dưới
+- VPC này sẽ cấp: 
+    + VPC Private IP
+    + Địa chỉ Private IPv4 trong subnet CIDR (Không gian mạng)
+    + Giả sử gán cho nó 1 cái địa chỉ IP Private 10.10.1.6
+- Để cái EC2 này đi ra ngoài Internet thì nó sẽ được gán vào một cái IP Public
+    + Thì nó gán Elastic IP address 
+    + Nó là địa chỉ Public IPv4 tĩnh, không thay đổi khi máy ảo restart
+    + Địa chỉ gán vào là 134.23.42.15
 ## **II. VPC Peering & Transit Gateway**
 ## **III. VPN & Direct Connect**
 ## **IV. Elastic Load Balancing**
