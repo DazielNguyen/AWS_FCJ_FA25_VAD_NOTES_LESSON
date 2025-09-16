@@ -27,11 +27,13 @@
 ***Một số tính chất chính và khái niệm của VPC cần nhớ:***
 - VPC nằm trong 1 **Region**, khi tạo VPC cần khai báo 1 lớp mạng **CIDR** IPPv4 (bắt buộc) và IPv6 (tùy chọn).
 - **Limit** của AWS: -> **5 VPC** -> trên **1 AWS Region** -> trên **1 AWS account**
-- Mục đích chính sử dụng VPC *trong thực tế* thường dùng để **phân tách** các môi trường, trong **software development life cycle**, thì nó sẽ chia ra nhiều môi trường như (Production/Dev/Test/Staging). -> Mỗi môi trường chúng ta có thể tạo ra 1 VPC
+- Mục đích chính sử dụng VPC *trong thực tế* thường dùng để **phân tách** các môi trường, trong **software development life cycle**, thì nó sẽ chia ra nhiều môi trường như **(Production/Dev/Test/Staging)**. -> Mỗi môi trường chúng ta có thể tạo ra 1 VPC
+- Lưu ý: **Isolate** (Cô lập) giữa các **VPC** chỉ là mức các **Network**. Nếu như chúng ta có yêu cầu của người dùng
+    + Vd: User không thể nhìn thấy một tài nguyên nguyên cụ thể thì cần tách nhiều AWS Account, nhiều VPC không giải quyết vấn đề này.
 
+***Kiến trúc phân tách các môi trường VPC riêng biệt:***
 
-
-
+![Kiến trúc VPC phân tách](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20basic.png)
 
 
 
