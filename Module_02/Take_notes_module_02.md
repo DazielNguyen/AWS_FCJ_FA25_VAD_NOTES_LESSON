@@ -91,7 +91,7 @@
 
 ![VPC nâng cao gồm EC2](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.3%20VPC%20n%C3%A2ng%20cao%20g%E1%BB%93m%20EC2.png)
 
-***Giải thích ảnh trên: ***
+***Giải thích ảnh trên:***
 - Trong này chúng ta tạo ra một máy chủ EC2 -> Máy chủ EC2 này sẽ được gán Elastic Network Interface -> ... Ở dưới
 - VPC này sẽ cấp: 
     + VPC Private IP
@@ -101,6 +101,29 @@
     + Thì nó gán Elastic IP address 
     + Nó là địa chỉ Public IPv4 tĩnh, không thay đổi khi máy ảo restart
     + Địa chỉ gán vào là 134.23.42.15
+
+### 1.4 VPC - Endpoint
+- VPC Endoint cho phép chúng ta kết nối các tài nguyên nằm trong VPC tới các dịch vụ AWS được hỗ trợ (AWS PrivateLink - đi qua mạng private của AWS) mà không cần thông qua kết nối Internet. 
+- Mục tiêu kết nối từ các tài nguyên, các máy chủ nằm trong VPC tới các dịch vụ khác của AWS nằm bên ngoài VPC.
+- Có **2 loại** VPC Endpoint:
+    + ***Interface Endpoint:*** Sử dụng một Elastics Network Interface trong VPC cùng với một địa chỉ IP Private để kết nối tới 1 dịch vụ có hỗ trợ cái ENI này.
+    + ***Gateway Endpoint:*** Sử dụng một Route table để định tuyến tới endpoint của dịch vụ hỗ trợ. Chỉ có 2 dịch vụ hỗ trợ (S3 và Dynamo DB).
+
+***Kiến trúc VPC Endpoint:***
+
+![VPC Endpoint]()
+
+***Giải thích ảnh trên:***
+- Giả sử để ra được Internet tới một dịch vụ mà AWS cung cấp, ví dự như Amazon S3 trong hình
+    + S3: Cái dịch vụ này tạo ra vùng không gian lưu trữ, thì mặc định rằng nó có phạm vi sẽ nằm ngoài VPC và nó độc lập.
+    + Nếu nó nằm ngoài VPC và nó độc lập thì sao -> Thì chúng ta không cần tạo cái VPC trên mà chúng ta có thể tạo ngay cái vùng lưu trữ S3, và chúng ta kết nối với nó bằng cái địa chỉ IP Public. 
+    + Việc kết nối ra ngoài Internet nó sẽ bị chậm, và nó sẽ gây phát sinh chi phí khi chúng ta thực hiện đi ra ngoài Internet, chi phí đầu vào sẽ không tính phí nhưng chi phí đầu ra thì sẽ bị tính phí.
+
+    => Với tính năng S3 này của AWS tại sao không cung cấp cho đường đi nội bộ thì AWS mới tạo ra thêm tính năng VPC Gate Endpoint cho S3
+
+- S3 - VPC Gateway Endpoint
+    + Nó sẽ đi qua mạng riêng và thông qua kết nối với địa chỉ IP Private
+
 ## **II. VPC Peering & Transit Gateway**
 ## **III. VPN & Direct Connect**
 ## **IV. Elastic Load Balancing**
