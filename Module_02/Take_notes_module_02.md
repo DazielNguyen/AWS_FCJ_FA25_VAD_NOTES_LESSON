@@ -62,10 +62,12 @@
 ***Làm sao để chúng ta tạo một cái Public Subnet, khi nào chúng ta gọi nó là Public Subnet và khi nào chúng ta gọi đó là Private Subnet? Phần 1.2 sẽ giải thích.*** 
 
 ### 1.2 VPC - Route Table
+- Route Table (Bảng định tuyến), tập hợp các Route để xác định đường đi bên trong mạng của mình.
+- Khi tạo VPC, AWS sẽ tạo một -> **Default Route table**, Default Route table không thể bị xóa bà chỉ chứa **1 Route duy nhất** là Route cho phép tất cả các Subnet trong VPC **liên lạc với nhau**.
 
+***Hình ảnh minh họa***
 
-
-
+![Minh họa Default Route table](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/VPC%20subnets.png)
 
 
 ## **II. VPC Peering & Transit Gateway**
