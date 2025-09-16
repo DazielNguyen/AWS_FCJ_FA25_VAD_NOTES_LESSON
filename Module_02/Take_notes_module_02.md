@@ -111,7 +111,7 @@
 
 ***Kiến trúc VPC Endpoint:***
 
-![VPC Endpoint]()
+![VPC Endpoint](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/%201.4%20VPC%20Endpoint.png)
 
 ***Giải thích ảnh trên:***
 - Giả sử để ra được Internet tới một dịch vụ mà AWS cung cấp, ví dự như Amazon S3 trong hình
