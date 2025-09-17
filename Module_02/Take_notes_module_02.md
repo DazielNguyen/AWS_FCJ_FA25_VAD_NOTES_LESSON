@@ -166,7 +166,61 @@
 - **Bước 3:** Tạo thêm Custom Route table -> Cấu hình 1 cái định tuyến mới gọi là Destination 10.10.0.0/16 đại diện cho tất cả các địa chỉ IP - Target của nó sẽ đi đến (ngw-id) hay được gọi là ID của NAT Gateway 
 - Thì cái Custom Route table -> Gán vào Private Subnet -> Máy chủ EC2 sẽ kết nối với NAT Gateway -> Internet Gateway và từ đó đi ra được Internet
 
-## **II. VPC Security and Multi-VPC features**
-### 1.
+### 1.7 VPC - Security Group (Tường lửa ảo trong VPC)
+- **Security Group** (SG) là một tường lửa ảo có lưu giữ trạng thái **(stateful)** giúp kiểm soát lượng truy cập **đến và đi** trong tài nguyên của AWS.
+    + ***statefule***: Nếu có thể đi vào được trong 1 cái session công việc, thì mình cũng có thể đi ra được.
+    + Vd: Chúng ta tạo  1 cái webserver, cái web đó chỉ mở Port 80, cho người dùng cuối có thể kết nối vào. Chiều ra không cần tự cấu hình mở thêm các Port khác.
+- Security Group **rule** được hạn chế theo giao thức, theo Protocol, theo địa chỉ IP nguồn, cổng kết nối, hoặc có thể đặt tên thành một Security Group khác.
+- Security Group **rule** ***chỉ cho phép rule allow***.
+- Security Group được apply lên các card mạng ảo ENI (Elastic Network Interface).
+
+***Hình ảnh ví dụ khi tạo Security Group:***
+
+![VPC Create SG](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.7%20VPC%20Create%20SG.png)
+
+***Giải thích***:
+- Tạo 1 SG có name: Web Server Security Group 
+- Cấu hình phân quyền trong cái **Inbound**
+
+***Kiến trúc VPC Security Group:***
+
+![VPC Security Group](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.7.1%20VPC%20Security%20Group.png)
+
+***Giải thích***:
+- Phần này chỉ là cấu hình cơ bản
+- Thì thấy rằng cái **Inbound Group 1** nó sẽ không có hiện phần chọn cấu hình và nó để trống. 
+- Bởi vì mặc định Security Group chặn mọi truy cập đến và cho phép mọi truy cập đi. -> Ta thấy rằng Outbound Rules sẽ được setting cấu hình. 
+
+***Nếu như để mặc định rằng chặn truy cập đến và cho phép truy cập đi này thì -> Giả sử nếu tạo 1 EC2 nếu không truy cập đến được, thì mình rất khó để quản lí nó như không remote desktop được, không SSH đến nó được.***
+
+***Kiến trúc VPC Security Group cho Web Server***
+
+![VPC Security Group Web Server](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.7.2%20VPC%20Security%20Group%20Web%20Server.png)
+
+***Giải thích:***
+- Ta thấy cái Inbound Rules cho phép Port 80 -> Source là tất cả các địa chỉ IP
+    + Khi ta thiết lập như vậy thì ta không biết Clients khách hàng của chúng ta đến từ đâu đều có thể kết nối được Web Server của mình thông qua Port 80
+- Còn Outbound Rules sẽ mặc định là đang mở theo cấu hình trên.
+
+***Kiến trúc khi tạo nhiều Security Group***
+
+![VPC Multi Security Group](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.7.3%20VPC%20Multi%20Security%20Group.png)
+
+***Giải thích:***
+- Cái này chỉ đơn giản nhiều SG trong 1 Subnet, nhưng trong thực tế sẽ có nhiều Subnet hơn. 
+- **Web server security group:**
+    + **Inbound Rules**:** Cho phép users từ tất cả mọi nơi có thể truy cập vào web server thông qua Port 80. 
+    + **Outbound Rules:** Có thể truy cập ra không bị ràng buộc.
+- **Database security group:**
+    + **Inbound Rules:** Chỉ cho phép các máy chủ EC2 nằm trong cái Web Server mới có thể truy cập vào Database Server thông qua Port 3306 thôi
+    + Ý nghĩa khi thiết lập (sg-webserver): Tất cả ENI (Elastic Network Interface) thì có cái địa chỉ IP đó có thể kết nối được tới Database Server.
+    + Lí do tại sao không dùng địa chỉ IP nhất định, mà là dùng tên sg-server, bởi vì trong một số trường hợp khi chúng ta auto-scale, cái Server của chúng ta nằm ở nhiều AZ, nằm ở nhiều Subnet khác nhau, nhiều Range IP khác nhau, địa chỉ IP Web Server của mình thay đổi chẳng hạn. 
+    + Thay vì mình tự vào và cấu hình cái SG cho EC2 Database, thì mình không cần cấu hình lại, mình chỉ đặt tên và cấu hình một lần thôi.
+    + Cái này AWS sẽ tự động cập nhật và update cho mình. 
+    + **Outbound Rules:** Có thể truy cập ra không bị ràng buộc.
+    
+### 1.8 VPC - Network Access Control List (NACL)
+### 1.9 VPC - Flow Logs
+## **II. VPC Peering & Transit Gateway**
 ## **III. VPN & Direct Connect**
 ## **IV. Elastic Load Balancing**
