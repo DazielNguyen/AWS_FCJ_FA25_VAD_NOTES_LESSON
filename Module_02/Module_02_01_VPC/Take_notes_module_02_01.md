@@ -1,4 +1,4 @@
-# **Module 2 - Dịch vụ mạng trên AWS**
+# **Module 2 - Các dịch vụ mạng trên AWS**
 ## **I. AWS Virtual Private Cloud (VPC)**
 ### 1. Giới thiệu về Amazon VPC 
 - Là một dịch vụ cung cấp môi trường mạng ảo riêng tư, nó được cô lập về mặt logic khỏi các mạng khác ở AWS Cloud, nó hoàn toàn tách biệt với thế giới bên ngoài.
@@ -22,7 +22,7 @@
 
 ***Kiến trúc cơ bản của VPC:***
 
-![Kiến trúc VPC cơ bản](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.%20VPC%20basic.png)
+![Kiến trúc VPC cơ bản](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.%20VPC%20basic.png)
 
 ***Một số tính chất chính và khái niệm của VPC cần nhớ:***
 - VPC nằm trong 1 **Region**, khi tạo VPC cần khai báo 1 lớp mạng **CIDR** IPPv4 (bắt buộc) và IPv6 (tùy chọn).
@@ -33,7 +33,7 @@
 
 ***Kiến trúc phân tách các môi trường VPC riêng biệt:***
 
-![Kiến trúc VPC phân tách](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.%20VPC%20ph%C3%A2n%20t%C3%A1ch.png)
+![Kiến trúc VPC phân tách](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.0%20VPC%20ph%C3%A2n%20t%C3%A1ch.png)
 
 ### 1.1 VPC - Subnets
 - **Subnets** được gọi là mạng con, Amazon VPC cho phép -> tạo nhiều mạng ảo và chia các mạng ảo này thành các mạng con **(Subnet)**.
@@ -56,7 +56,7 @@
     + Private thì ngược lại -> Không được đưa ra ngoài Internet.
 ***Kiến trúc VPC Subnets:***
 
-![Kiến trúc VPC - Subnets](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.1%20VPC%20subnets.png)
+![Kiến trúc VPC - Subnets](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.1%20VPC%20subnets.png)
 - Mỗi Subnets riêng biệt chỉ nằm trong 1 AZ riêng biệt.
 
 ***Làm sao để chúng ta tạo một cái Public Subnet, khi nào chúng ta gọi nó là Public Subnet và khi nào chúng ta gọi đó là Private Subnet? Phần 1.2 sẽ giải thích.*** 
@@ -67,7 +67,7 @@
 
 ***Hình ảnh minh họa***
 
-![Minh họa Default Route table](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.2%20Default%20Route%20table.jpg)
+![Minh họa Default Route table](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.2%20Default%20Route%20table.jpg)
 
 - Route table sẽ được gán vào Subnet. 
 - Để tạo được Public Subnet, Subnets mà bên trong máy chủ có thể đi ra ngoài Internet, thì chúng ta phải tạo Custom Route table (Bảng định tuyến tùy chỉnh), tuy nhiên không thể xóa Default Route (VPC CIDR - Local), chỉ được thêm subnet chứ không xóa được Default Route. 
@@ -89,7 +89,7 @@
 
 ***Kiến trúc VPC ENI***
 
-![VPC ENI gồm EC2](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.3%20VPC%20n%C3%A2ng%20cao%20g%E1%BB%93m%20EC2.png)
+![VPC ENI gồm EC2](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.3%20VPC%20n%C3%A2ng%20cao%20g%E1%BB%93m%20EC2.png)
 
 ***Giải thích ảnh trên:***
 - Trong này chúng ta tạo ra một máy chủ EC2 -> Máy chủ EC2 này sẽ được gán Elastic Network Interface -> ... Ở dưới
@@ -111,7 +111,7 @@
 
 ***Kiến trúc VPC Endpoint:***
 
-![VPC Endpoint](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/%201.4%20VPC%20Endpoint.png)
+![VPC Endpoint](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/%201.4%20VPC%20Endpoint.png)
 
 ***Giải thích ảnh trên:***
 - Giả sử để ra được Internet tới một dịch vụ mà AWS cung cấp, ví dự như Amazon S3 trong hình
@@ -134,7 +134,7 @@
 
 ***Kiến trúc VPC Internet Gateway***
 
-![VPC Internet Gateway](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.5%20VPC%20Internet%20Gateway.png)
+![VPC Internet Gateway](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.5%20VPC%20Internet%20Gateway.png)
 
 ***Giải thích cách để EC2 ra được Internet***
 - **Bước 1:** Tạo 1 cái Internet Route table hay được gọi là Internet Gateway.
@@ -158,7 +158,7 @@
 
 ***Kiến trúc VPC NAT Gateway***
 
-![VPC NAT Gateway](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.6%20VPC%20NAT%20Gateway.png)
+![VPC NAT Gateway](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.6%20VPC%20NAT%20Gateway.png)
 
 ***Giải thích cách Private Subnet ra Internet***
 - **Bước 1:** Máy chủ ảo EC2 không được đặt trong Public Subnet nữa mà giờ đây, máy chủ ảo EC2 được đặt trong -> Private Subnet -> Và chúng ta có 1 cái địa chỉ IP Private nằm trong Private Subnet này
@@ -176,7 +176,7 @@
 
 ***Hình ảnh ví dụ khi tạo Security Group:***
 
-![VPC Create SG](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.7%20VPC%20Create%20SG.png)
+![VPC Create SG](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.7%20VPC%20Create%20SG.png)
 
 ***Giải thích***:
 - Tạo 1 SG có name: Web Server Security Group 
@@ -184,7 +184,7 @@
 
 ***Kiến trúc VPC Security Group:***
 
-![VPC Security Group](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.7.1%20VPC%20Security%20Group.png)
+![VPC Security Group](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.7.1%20VPC%20Security%20Group.png)
 
 ***Giải thích***:
 - Phần này chỉ là cấu hình cơ bản
@@ -195,7 +195,7 @@
 
 ***Kiến trúc VPC Security Group cho Web Server***
 
-![VPC Security Group Web Server](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.7.2%20VPC%20Security%20Group%20Web%20Server.png)
+![VPC Security Group Web Server](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.7.2%20VPC%20Security%20Group%20Web%20Server.png)
 
 ***Giải thích:***
 - Ta thấy cái Inbound Rules cho phép Port 80 -> Source là tất cả các địa chỉ IP
@@ -204,7 +204,7 @@
 
 ***Kiến trúc khi tạo nhiều Security Group***
 
-![VPC Multi Security Group](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.7.3%20VPC%20Multi%20Security%20Group.png)
+![VPC Multi Security Group](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.7.3%20VPC%20Multi%20Security%20Group.png)
 
 ***Giải thích:***
 - Cái này chỉ đơn giản nhiều SG trong 1 Subnet, nhưng trong thực tế sẽ có nhiều Subnet hơn. 
@@ -230,14 +230,14 @@
 
 ***Giao diện cấu hình của NACL:***
 
-![1.8 VPC Set up NACL](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.8%20VPC%20Set%20up%20NACL.png)
+![1.8 VPC Set up NACL](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.8%20VPC%20Set%20up%20NACL.png)
 
 **Lưu ý:**
 - Rule đọc từ trên xuống dưới. Nếu thỏa Rule nào thì lấy Rule đó.
 
 ***Kiến trúc VPC NACL***
 
-![1.8.1 VPC NACL Architec](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.8.1%20VPC%20NACL%20Architec.png)
+![1.8.1 VPC NACL Architec](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.8.1%20VPC%20NACL%20Architec.png)
 
 **Lưu ý:**
 - Với các thiết lập Rule chạy từ trên xuống như vậy, thì khi tạo 1 cái NACL mới và mặc định thì NACL cho phép mọi truy cập đến và đi. 
@@ -256,11 +256,7 @@
 
 ***Example VPC Flow Logs***
 
-![1.9 VPC Flow Logs](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.9%20VPC%20Flow%20Logs.png)
+![1.9 VPC Flow Logs](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Image_module_02_01/1.9%20VPC%20Flow%20Logs.png)
 
 **Lưu ý:**
 - Trong ví dụ này thì chúng ta thấy được VPC FLow Logs sẽ Capture được thông tin gì. 
-
-## **II. VPC Peering & Transit Gateway**
-## **III. VPN & Direct Connect**
-## **IV. Elastic Load Balancing**
