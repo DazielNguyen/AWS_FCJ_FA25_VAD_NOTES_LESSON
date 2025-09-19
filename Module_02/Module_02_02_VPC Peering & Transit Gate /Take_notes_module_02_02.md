@@ -60,5 +60,4 @@ Ngồi cấu hình từng cái thôi cũng đù người=))))) Vấn đề giả
 
 - Nhưng nó vẫn giống VPC Peering ở chỗ là mình phải cấu hình cái Route table cho từng cái Transit Gateway Attachment đó.
 ## **III. VPN & Direct Connect**
-
 ## **IV. Elastic Load Balancing**
