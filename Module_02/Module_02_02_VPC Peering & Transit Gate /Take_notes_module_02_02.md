@@ -59,5 +59,3 @@ Ngồi cấu hình từng cái thôi cũng đù người=))))) Vấn đề giả
 - Khi tạo Transit Gateway xong, thì mình tạo các Transit Gateway Attachment trong từng VPC khác nhau sẽ kết nối với nhau. 
 
 - Nhưng nó vẫn giống VPC Peering ở chỗ là mình phải cấu hình cái Route table cho từng cái Transit Gateway Attachment đó.
-## **III. VPN & Direct Connect**
-## **IV. Elastic Load Balancing**
