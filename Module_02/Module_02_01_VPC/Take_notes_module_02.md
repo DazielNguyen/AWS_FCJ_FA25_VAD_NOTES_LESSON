@@ -167,8 +167,8 @@
 - Thì cái Custom Route table -> Gán vào Private Subnet -> Máy chủ EC2 sẽ kết nối với NAT Gateway -> Internet Gateway và từ đó đi ra được Internet
 
 ### 1.7 VPC - Security Group (Tường lửa ảo trong VPC)
-- **Security Group** (SG) là một tường lửa ảo có lưu giữ trạng thái **(stateful)** giúp kiểm soát lượng truy cập **đến và đi** trong tài nguyên của AWS.
-    + ***statefule***: Nếu có thể đi vào được trong 1 cái session công việc, thì mình cũng có thể đi ra được.
+- **Security Group** (SG) là một tường lửa ảo **có lưu giữ trạng thái (stateful)** giúp kiểm soát lượng truy cập **đến và đi** trong tài nguyên của AWS.
+    + ***stateful***: Nếu có thể đi vào được trong 1 cái session công việc, thì mình cũng có thể đi ra được.
     + Vd: Chúng ta tạo  1 cái webserver, cái web đó chỉ mở Port 80, cho người dùng cuối có thể kết nối vào. Chiều ra không cần tự cấu hình mở thêm các Port khác.
 - Security Group **rule** được hạn chế theo giao thức, theo Protocol, theo địa chỉ IP nguồn, cổng kết nối, hoặc có thể đặt tên thành một Security Group khác.
 - Security Group **rule** ***chỉ cho phép rule allow***.
@@ -218,9 +218,49 @@
     + Thay vì mình tự vào và cấu hình cái SG cho EC2 Database, thì mình không cần cấu hình lại, mình chỉ đặt tên và cấu hình một lần thôi.
     + Cái này AWS sẽ tự động cập nhật và update cho mình. 
     + **Outbound Rules:** Có thể truy cập ra không bị ràng buộc.
-    
+
 ### 1.8 VPC - Network Access Control List (NACL)
+- **Network Access Control List (NACL)** là một tường lựa ảo **không lưu giữ trạng thái (stateless)** giúp **kiểm soát** lượng truy cập **đến và đi** trong tài nguyên của AWS.
+    + ***stateless***: Cấu hình Firewall Rules, cấu hình cả chiều đến và chiều đi. Lưu ý cái chiều đến thì nó sẽ đến từ Port nào và chiều đi nó sẽ ra đi ra từ Port nào nó mới đúng được, 
+- NACL được hạn chế theo giao thức, địa chỉ nguồn, cổng kết nối. 
+- NACL được áp dụng lên các Amazon VPC Subnets -> Nó ảnh hưởng trực tiếp lên Subnet, khi thay đổi cấu hình của NACL thì nó có thể gây ảnh hưởng đến nhiều máy chủ cùng một lúc, chứ không phải chỉ máy chủ mà mình gán vào không.
+    + **Cấu hình tường lửa như thế nào để không ảnh hưởng đến các máy chủ khác, ứng dụng khác trong cùng VPC?** -> Use Security Group
+    + Use NACL: Sẽ ảnh hưởng đến các tài nguyên và các máy chủ ảo, cơ sở dữ liệu nằm trong VPC Subnet. 
+- **Mặc định NACL** cho phép mọi **truy cập đến và đi.**
+
+***Giao diện cấu hình của NACL:***
+
+![1.8 VPC Set up NACL](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.8%20VPC%20Set%20up%20NACL.png)
+
+**Lưu ý:**
+- Rule đọc từ trên xuống dưới. Nếu thỏa Rule nào thì lấy Rule đó.
+
+***Kiến trúc VPC NACL***
+
+![1.8.1 VPC NACL Architec](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.8.1%20VPC%20NACL%20Architec.png)
+
+**Lưu ý:**
+- Với các thiết lập Rule chạy từ trên xuống như vậy, thì khi tạo 1 cái NACL mới và mặc định thì NACL cho phép mọi truy cập đến và đi. 
+- Thì để ý Phần Rule # của Inbound và Outbound sẽ set Rule là 1
+    + Protocol: All 
+    + Port: All
+    + Source: All IP Address
+
 ### 1.9 VPC - Flow Logs
+
+- **VPC FLow Logs**: là một tính năng cho phép bạn -> nắm bắt thông tin về lưu lượng của các Elastic Network Interface này đến Elastic Network Interface khác, Card mạng này đến Card mạng khác trong VPC.
+
+- Các tập tin logs có thể được xuất bản lên **Amazon Cloud Watch Logs** hoặc **Amazon S3**.
+
+- **VPC Flow Logs không capture** nội dung gói tin.
+
+***Example VPC Flow Logs***
+
+![1.9 VPC Flow Logs](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/1.9%20VPC%20Flow%20Logs.png)
+
+**Lưu ý:**
+- Trong ví dụ này thì chúng ta thấy được VPC FLow Logs sẽ Capture được thông tin gì. 
+
 ## **II. VPC Peering & Transit Gateway**
 ## **III. VPN & Direct Connect**
 ## **IV. Elastic Load Balancing**
