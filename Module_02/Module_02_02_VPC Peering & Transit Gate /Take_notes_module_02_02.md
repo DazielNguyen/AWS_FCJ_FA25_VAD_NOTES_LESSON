@@ -34,7 +34,31 @@ Ngồi cấu hình từng cái thôi cũng đù người=))))) Vấn đề giả
 
 ### 2. Transit Gateway
 - Kiến trúc Transit Gateway không giống như VPC Peering là quan hệ 1:1, và chúng ta có thể hiểu rằng Transit Gateway như 1 cái hub trung tâm mạng.
+
 - **Transit Gateway** được dùng kết nối các VPC và mạng on-premises thông qua một hub trung tâm. Điều này đơn giản hóa mạng và kết thúc các mối quan hệ định tuyến phức tạp 
+
 - **Transit Gateway Attachment** là một công cụ để gán các subnet từng VPC cần kết nối với nhau vào một TGW đã được khởi tạo. Transit Gateway Attachment hoạt động ở quy mô Availability Zone *(AZ-level)*.
+
+- Trong VPC, khi một subnet ở một AZ sẽ gán Transit Gateway Attachment với một TGW, các subnet khác trong cùng AZ đều có thể kết nối tới TGW đó.   
+
+    + Giả sử VPC của mình có các Subnet rãi đều ở 3 AZ khác nhau, mình có thể cần đến 3 Transit Gateway Attachment.
+
+- Các tập đoàn lớn thường ưa chuộng việc sử dụng 
+**Transit Gateway**.
+
+***Kiến trúc Transit Gateway***
+
+![2.3 Transit Gateway](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_02_VPC%20Peering%20%26%20Transit%20Gate%20/Image_module_02_02/2.3%20Transit%20Gateway.png)
+
+***Lưu ý***:
+
+- Chúng ta có 4 cái VPC, như ảnh cấu trúc VPC Peering thì chúng ta cần phải tạo 6 cái Peering Connection.
+
+- Nhưng trong cấu trúc này chỉ cần tạo 1 cái Transit Gateway thôi.
+
+- Khi tạo Transit Gateway xong, thì mình tạo các Transit Gateway Attachment trong từng VPC khác nhau sẽ kết nối với nhau. 
+
+- Nhưng nó vẫn giống VPC Peering ở chỗ là mình phải cấu hình cái Route table cho từng cái Transit Gateway Attachment đó.
 ## **III. VPN & Direct Connect**
+
 ## **IV. Elastic Load Balancing**
