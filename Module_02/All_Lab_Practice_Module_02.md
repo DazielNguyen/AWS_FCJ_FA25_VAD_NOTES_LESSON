@@ -128,11 +128,33 @@
         |       + Click Save associations
 
 #### 1.5 Tạo Security Group
+- Security Group là tường lửa ảo cho các tài nguyên AWS
+- Hoạt động như danh sách kiểm soát truy cập (ACL) ở cấp instance
+- Cho phép kiểm soát lưu lượng vào/ra theo port và protocol
 
+***Tạo Security Group cho Public Subnet***
 
+        Step 1: Truy cập VPC -> Security Group -> Crete Security Group
+        |
+        Step 2: Cấu hình Security Group
+        |       + Security Group name: Nhập Public subnet - SG
+        |       + Description: Nhập Allow SSH and Ping for servers in public subnet
+        |       + VPC: Chọn VPC ASG
+        |
+        Step 3: Thiết lập Inbound Rules
+        |       + Click Add rule
+        |       + Rule 1:
+        |               Type: SSH
+        |               Source: My IP (địa chỉ IPv4 public của bạn)
+        |       + Rule 2:
+        |               Type: All ICMP - IPv4
+        |               Source: Anywhere (cho phép ping từ mọi nơi)
+        | 
+        Step 4: Xác nhận Outbound Rules và tạo Security Group
+        |
+        Step 5: Kiểm tra Security Group đã tạo
 
-
-
+***Tạo Security Group cho Public Subnet***
 
 
 ### 2. Các vấn đề gặp phải và cách giải quyết vấn đề.
@@ -186,3 +208,4 @@
     + Tạo Outbound Endpoint
     + Tạo Route 53 Resolver Rule
     + Tạo Inbound Endpoint.
+
