@@ -49,7 +49,27 @@
 
 - Mỗi ELB sẽ được cấp tên DNS và kết nối thông qua DNS. Chỉ có Network Load Balancer hỗ trợ gán IP tĩnh. 
 
+- ELB không kết nối qua địa chỉ IP, chỉ kết nối qua DNS trừ ELB - Network Load Balancer.
+
+- ELB có tính năng **health check**, không gửi lưu lượng đến các Instance không đạt **health check**.
+
+- Bao gồm 4 loại: 
+    + **Application Load Balancer**
+    + **Network Load Balancer** -> Hỗ trợ gán IP tĩnh
+    + **Classic Load Balancer** -> Giá cao
+    + **Gateway Load Balancer** -> Mới nhất
+
+- **Sticky session (session affinity):** Tính năng cho phép các kết nối được gán vào một target nhất định. Việc này đảm bảo các requests từ một user trong một session sẽ được gửi tới cùng một target. 
+
+- **Sticky session** là cần thiết trong trường hợp các máy chủ ứng dụng lưu trữ thông tin trạng thái của người dùng tại server. 
+
+    + Hoạt động trên **Network Load Balancer, Application Load Balancer, Classic Load Balancer.**
+
+- ELB cung cấp tính năng lưu trữ logs truy cập **(access logs)** chugns ta có thể sử dụng access logs để phân tích truy cập, trouble shoot. Logs truy cập sẽ được lưu trữ vào một dịch vụ lưu trữ đối tượng là **Amazon S3** (Simple Storage Service).
+
+
 ### 2. ELB - Application Load Balancer
+
 ### 3. ELB - Network Load Balancer
 ### 4. ELB - Classic Load Balancer
 ### 5. ELB - Gateway Load Balancer
