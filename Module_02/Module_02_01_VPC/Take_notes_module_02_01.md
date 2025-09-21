@@ -167,6 +167,7 @@
 - Thì cái Custom Route table -> Gán vào Private Subnet -> Máy chủ EC2 sẽ kết nối với NAT Gateway -> Internet Gateway và từ đó đi ra được Internet
 
 ### 1.7 VPC - Security Group (Tường lửa ảo trong VPC)
+[https://000003.awsstudygroup.com/vi/2-firewallinvpc/2.1-securitygroup/]
 - **Security Group** (SG) là một tường lửa ảo **có lưu giữ trạng thái (stateful)** giúp kiểm soát lượng truy cập **đến và đi** trong tài nguyên của AWS.
     + ***stateful***: Nếu có thể đi vào được trong 1 cái session công việc, thì mình cũng có thể đi ra được.
     + Vd: Chúng ta tạo  1 cái webserver, cái web đó chỉ mở Port 80, cho người dùng cuối có thể kết nối vào. Chiều ra không cần tự cấu hình mở thêm các Port khác.
@@ -220,6 +221,7 @@
     + **Outbound Rules:** Có thể truy cập ra không bị ràng buộc.
 
 ### 1.8 VPC - Network Access Control List (NACL)
+[https://000003.awsstudygroup.com/vi/2-firewallinvpc/2.2-networkacls/]
 - **Network Access Control List (NACL)** là một tường lựa ảo **không lưu giữ trạng thái (stateless)** giúp **kiểm soát** lượng truy cập **đến và đi** trong tài nguyên của AWS.
     + ***stateless***: Cấu hình Firewall Rules, cấu hình cả chiều đến và chiều đi. Lưu ý cái chiều đến thì nó sẽ đến từ Port nào và chiều đi nó sẽ ra đi ra từ Port nào nó mới đúng được, 
 - NACL được hạn chế theo giao thức, địa chỉ nguồn, cổng kết nối. 
