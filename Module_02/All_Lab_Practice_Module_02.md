@@ -156,10 +156,85 @@
 
 ***Tạo Security Group cho Public Subnet***
 
+        Step 1: Truy cập VPC -> Security Group -> Crete Security Group
+        |
+        Step 2: Cấu hình Security Group
+        |       + Security Group name: Nhập Private subnet - SG
+        |       + Description: Nhập Allow SSH and Ping for servers in private subnet
+        |       + VPC: Chọn VPC ASG
+        |
+        Step 3: Thiết lập Inbound Rules cho SSH
+        |       + Click Add rule
+        |       + Type: SSH
+        |       + Source: Custom
+        |       + Chọn Security Group Public subnet - SG
+        |
+        Step 4: Thêm rule cho ICMP
+        |       + Click Add rule
+        |       + Type: All ICMP - IPv4
+        |       + Source: Anywhere
+        |  
+        Step 5: Xác nhận Outbound Rules và tạo Security Group
+        |
+        Step 6: Kiểm tra Security Group đã tạo
 
+***Cấu hình Security Group cho VPC Endpoints***
+
+        Step 1: Tạo security group bổ sung cho VPC endpoints:
+        |       + Quay lại Security Groups
+        |       + Nhấp Create security group
+        |       + Security group name: Nhập VPC-Endpoints-SG
+        |       + Description: Nhập Security group for VPC endpoints
+        |       + VPC: Chọn VPC ASG từ dropdown
+        | 
+        Step 2: Cấu hình quy tắc security group cho VPC Endpoints:
+        |       - Inbound rules:
+        |         + Nhấp Add rule
+        |         + Type: Chọn HTTPS
+        |         + Source: Chọn Custom và nhập 10.10.0.0/16 (VPC CIDR)
+        |         + Description: Nhập HTTPS access from VPC resources
+        |       - Outbound rules: Giữ mặc định (Cho phép tất cả traffic)
+        |       - Nhấp Create security group
+        |
+        Step 3: Cập nhật Private Subnet Security Group để truy cập VPC endpoint:
+        |       - Chọn Private subnet - SG
+        |       - Nhấp Actions > Edit outbound rules
+        |       - Đảm bảo quy tắc outbound sau tồn tại:
+        |         + Type: HTTPS
+        |         + Destination: 0.0.0.0/0
+        |         + Description: HTTPS to AWS services and VPC endpoints
+        |       - Nhấp Save rules
+
+***Xác nhận Cấu hình:***
+
++ Kiểm tra ba Security Groups đã tạo: 
++ Public subnet - SG: Cho phép SSH từ IP của bạn và ICMP từ VPC 
++ Private subnet - SG: Cho phép SSH từ Public subnet và ICMP từ VPC 
++ VPC-Endpoints-SG: Cho phép HTTPS từ VPC để truy cập AWS services
 ### 2. Các vấn đề gặp phải và cách giải quyết vấn đề.
 
+1. Test cổng 22 trước. 
+nc -vz ec2-54-254-136-81.ap-southeast-1.compute.amazonaws.com 22
 
+Nó sẽ đưa ra cái IP: 115.78.229.21
+2. Mở đúng IP trong Security Group
+EC2 → Instances → chọn instance của bạn → tab Security → click vào Security group.
+
+Edit inbound rules → Add rule:
+
+Type: SSH
+
+Port: 22
+
+Source: 115.78.229.21/32
+
+Save.
+3. 
+# nếu "succeeded", SSH luôn:
+chmod 400 /Users/vananhduy/Downloads/aws-keypair.pem
+ssh -o IdentitiesOnly=yes \
+    -i /Users/vananhduy/Downloads/aws-keypair.pem \
+    ec2-user@ec2-54-254-136-81.ap-southeast-1.compute.amazonaws.com
 
 
 # **Module 02 - Lab: 000058**
