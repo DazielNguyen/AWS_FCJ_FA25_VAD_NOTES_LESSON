@@ -16,6 +16,7 @@ lựa chọn các EC2 Instance type.
 ***Sơ đồ kiến trúc của máy chủ ảo EC2***
 
 ![Module 3.1 EC2 Architec](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.1%20EC2%20Architec.png)
+
 - Instance type quyết định các yếu tố :
     + CPU (Intel / AMD / ARM ( Graviton 1/ 2/3) / GPU)
     + Memory
@@ -42,6 +43,8 @@ lựa chọn các EC2 Instance type.
 ![Module 3.3 EC2 Key Pair](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.3%20EC2%20Key%20Pair.png)
 
 ### 4. EC2 - Elastic Block Store 
+- **Amazon EBS** cung cấp block storage và được gán trực tiếp vào EC2 Instance , tuy được gán trực tiếp như 1 RAW device, EBS về bản chất hoạt động độc lập với EC2 và được kết nối thông qua mạng riêng của EBS.
+- EBS có hai nhóm đĩa chính là **HDD và SSD**, được thiết kế để đạt độ sẵn sàng 99.999% bằng cách replicate dữ liệu giữa 3 Storage Node trong 1 AZ.
 
 ## **II. Amazon Lighsail**
 ## **III. Amazon EFS/FSX**
