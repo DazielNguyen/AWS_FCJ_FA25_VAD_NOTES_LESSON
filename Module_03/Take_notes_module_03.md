@@ -74,7 +74,7 @@ EC2.
           
             + Khi sử dụng thường được replicate dữ liệu vào một EBS volume để bảo đảm an toàn.
 
-***Kiến trúc EC2 - Instance Store**
+***Kiến trúc EC2 - Instance Store***
 
 ![Module 3.5 EC2 - Instance Store](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.5%20EC2%20-%20Instance%20Store.png)
 
@@ -113,12 +113,52 @@ nó chạy sâu trong máy chủ chẳng hạn, làm sao để script biết đ�
 
 => Cần metadata để thực hiện các công việc tự động hóa, để chạy được những câu lệnh bên trong EC2 Instance -> Lấy những thông tin liên quan đến nó ở bên ngoài, chứ không phải ở bên trong hệ điều hành. 
 
+### 8. EC2 - EC2 Auto Scaling 
+- **EC2 Auto Scaling** là tính năng hỗ trợ tăng giảm số lượng EC2 Instance dựa theo các điều kiện cụ thể (scaling policy) .
+- **EC2 Auto Scaling** có thế tự đăng ký các EC2 Instance vào Elastic Load Balancer.
+- **EC2 Auto Scaling** hoạt động trên nhiều AWS Availability Zone.
+- **EC2 Auto Scaling** có thể hỗ trơ nhiều Pricing options khác nhau.
 
+***Kiến trúc hoạt động của EC2 Auto Scaling***
 
+***ActiveConnectionCount metric is **high*****
 
+![Module 3.8 EC2 - EC2 Auto Scaling - High](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.8%20EC2%20-%20EC2%20Auto%20Scaling%20-%20High.png)
 
+***Giải thích:***
+- Giả sử ActiveConnectionCount metric is **high**
+   
+    => Hiệu năng hệ thống bị ảnh hưởng khi số lượng kết nối quá nhiều, phần Backend xử lý không kịp. 
 
+- Với tính năng Auto Scaling thì chúng ta sẽ tạo một Auto Scaling Group nó có thể span across nhiều AZ
 
+- Với Auto Scaling Group này chúng ta phải tăng số lượng máy chủ lên. Và đăng kí cái máy chủ mới đó với Application Load Balancer. 
+
+***ActiveConnectionCount metric is **normal*****
+
+![Module 3.8 EC2 - EC2 Auto Scaling - Normal](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.8%20EC2%20-%20EC2%20Auto%20Scaling%20-%20Normal.png)
+
+***Giải thích:***
+
+- Thì những cái Request sẽ được chia tải ra, khi chia tải như vậy thì cái ActiveConnectionCount metric is **normal**
+
+    => Hiệu năng hệ thống trở về bình thường khi số lượng EC2 Instance được tăng lên, giúp khả năng xử lý của Backend nhanh hơn. 
+
+***ActiveConnectionCount metric is **low*****
+
+![Module 3.8 EC2 - EC2 Auto Scaling - Low](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.8%20EC2%20-%20EC2%20Auto%20Scaling%20-%20Low.png)
+
+***Giải thích:***
+
+- Sau khi số lượng kết nối, request giảm, ví dụ chúng ta chạy một cái sự kiện giảm giá thì số lượng kết nối ban đầu sẽ cao, sau khi hết sự kiện sẽ giảm xuống thấp, thì chúng ta đâu cần phải duy trì số lượng máy chủ lớn, chúng ta có thể giảm số lượng máy.
+- Thì lúc này nó sẽ thực hiện thao tác Scale - IN, thì máy chủ ảo lúc ban đầu được tạo ra để giải quyết vấn đề lượng truy cập cao, giờ đây chúng ta xóa bớt đi 2 máy chủ Derminate đi. 
+    
+    => Thì hệ thống lúc này từ LOW sẽ trở về lại NORMAL
+   
+    => Khi số lượng kết nối giảm, số instance sẽ được giảm xuống (scale in) để tiết kiệm chi phí.
+
+### 9. EC2 - Pricing Option
+ 
 ## **II. Amazon Lighsail**
 ## **III. Amazon EFS/FSX**
 ## **IV. AWS Application Migration Service (MGN)**
