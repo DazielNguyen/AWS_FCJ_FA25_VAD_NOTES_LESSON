@@ -158,7 +158,27 @@ nó chạy sâu trong máy chủ chẳng hạn, làm sao để script biết đ�
     => Khi số lượng kết nối giảm, số instance sẽ được giảm xuống (scale in) để tiết kiệm chi phí.
 
 ### 9. EC2 - Pricing Option
- 
+- EC2 bao gồm **4 Options giá**: 
+
+    1. **On-demand**: Trả theo giờ /phút /giây, sử dựng bao nhiêu tính tiền bấy nhiêu, gói mắc nhất. Phù hợp cho các workload chạy lên tới 6 tiếng 1 ngày. 
+
+    2. **Reserved Instance**: Cam kết sử dụng theo kì hạn 1-3 năm để lấy discount, tuy nhiên bị giới hạn theo EC2 Instance type /family. 
+
+    3. **Saving Plans**: Cam kết sử dụng theo kì hạn 1-3 năm để lấy discount, có thể không bị giới hạn bởi EC2 Instance Type Family. 
+
+    4. **Spot Instance**: Tận dụng tài nguyên dư, giá rẻ tuy nhiên khi cần thì AWS sẽ terminate instance trong 2 phút.
+
+- Kết hợp nhiều **Pricing Options** trong **EC2 Auto Scaling Group**.  
+
+    + **Reserved Instance/ Saving Plan**: Số lượng EC2 minimum
+    + **On-Demand Instance**: Auto EC2, thêm EC2 khi có người dùng mới kết nối vào
+    + **On-Demand Instance /Spot Instance**: Ứng dụng thiết kế để có thể chịu lỗi, khi máy chủ bị stop bất ngờ, bị terminate.
+
 ## **II. Amazon Lighsail**
+
+
+
+
+
 ## **III. Amazon EFS/FSX**
 ## **IV. AWS Application Migration Service (MGN)**
