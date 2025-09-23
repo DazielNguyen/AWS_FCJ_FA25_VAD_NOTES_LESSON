@@ -44,7 +44,80 @@ lựa chọn các EC2 Instance type.
 
 ### 4. EC2 - Elastic Block Store 
 - **Amazon EBS** cung cấp block storage và được gán trực tiếp vào EC2 Instance , tuy được gán trực tiếp như 1 RAW device, EBS về bản chất hoạt động độc lập với EC2 và được kết nối thông qua mạng riêng của EBS.
-- EBS có hai nhóm đĩa chính là **HDD và SSD**, được thiết kế để đạt độ sẵn sàng 99.999% bằng cách replicate dữ liệu giữa 3 Storage Node trong 1 AZ.
+
+- **EBS** có hai nhóm đĩa chính là **HDD và SSD**, được thiết kế để đạt độ sẵn sàng 99.999% bằng cách **replicate dữ liệu giữa 3 Storage Node trong 1 AZ**.
+    + EBS nó hỗ trợ tốt hơn môi trường truyền thống bằng cách replicate nhân 3 dữ liệu tránh thất thoát và làm mất dữ liệu đó là lí do Cloud tốt hơn môi trường truyền thống. 
+    + HDD: Tập ghi tuần tự sẽ được ưu tiên, thao tác copy một file lớn copy vào ổ cứng, ghi tuần tự xuống ổ đĩa cứng đó. 
+    + SSD: Lưu trữ dạng flash, có tốc độ đọc ghi ngẫu nhiên cao. 
+
+***Kiến trúc EBS với EC2***
+
+![Module 3.4 EC2 - EBS](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.4%20EC2%20-%20EBS.png)
+
+- EBS về bản chất **hoạt động độc lập với EC2** và được kết nối thông qua mạng riêng của EBS **trong cùng 1 AZ. EC2 không thể hoạt đọng mà không có EBS**. 
+- Tối thiểu phải có EBS Volumn chứa hệ điều hành của chúng ta trong đó. 
+    + Giả sử EC2 error, thì dữ liệu của chúng ta vẫn còn, thì nhà cung cấp dịch vụ cho khởi tạo lại máy chủ, cho chạy lại cái máy chủ đó dựa trên cái volumn này. -> Dịch chuyển EC2 sang Hardware Node khác, vẫn kết nối với Volumn này, tính năng này có sẵn. 
+- Có một số EC2 Instances đặc thù được tối ưu hóa hiệu năng của EBS. (Optimized EBS Instances)
+- EBS volumes, mặc định chỉ được gán vào 1 EC2 Instances, EC2 Instances chạy trên **Hypervisor Nitro** có thể dùng 1 EBS volume gắn vào nhiều EC2 Instances. (EBS Multi attach)
+- EBS được backup bằng cách thực hiện snapshot vào **S3 (Simple Storage Storage)**
+- Snapshot đầu tiên là **full**, tất cả các snapshot tiếp theo là **incremental**.
+
+### 5. EC2 - Instance Store 
+
+- **Instance store** là vùng đĩa **NVME** tốc độ cực cao, nằm trên physical node chạy các máy ảo
+EC2.
+    + **Instance store** sẽ **bị xóa hết dữ liệu** khi chúng ta thực hiện **stop EC2 instance.**
+    + **Instance store** **không bị xóa dữ liệu** khi chúng ta thực hiện **restart máy, hoặc bị crash.**
+    + **Instance store không replicate dữ liệu dự phòng** nên thường **không khuyên khích lưu trữ** dữ liệu quan trọng.
+       
+        + Sử dụng trong các trường hợp cần hiệu năng cực cao lên tới hàng triệu IOPS
+          
+            + Khi sử dụng thường được replicate dữ liệu vào một EBS volume để bảo đảm an toàn.
+
+***Kiến trúc EC2 - Instance Store**
+
+![Module 3.5 EC2 - Instance Store](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.5%20EC2%20-%20Instance%20Store.png)
+
+- Sử dụng trong các trường hợp cần hiệu năng cực cao lên tới hàng triệu IPOS
+    + swap 
+    + paging
+    + buffer / cache
+    + log
+
+### 6. EC2 - User data
+- **EC2 user data** là đoạn script chạy một lần khi provision EC2 Instance từ AMI.
+- Tùy hệ điều hành mà chúng ta sẽ sử dụng bash shell scripts (Linux) / powershell (Windows).
+- Bạn có thể kiểm tra user data của EC2 tại: http://169.254.169.254/latest/user-data.
+
+***Kiến trúc EC2 - User Data***
+
+![Module 3.6 EC2 - User Data](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.6%20EC2%20-%20User%20Data.png)
+
+### 7. EC2 - Meta Data
+- **EC2 Metadata** là các thông tin liên quan tới bản thân EC2 instances, ví dụ địa chỉ IP Private, Public, Hostname, Security Groups...
+- Kiểm tra Metadata: http://169.254.169.254/latest/meta-data/
+
+***Ví dụ về Metadata***
+
+![Module 3.7 EC2 - Metadata Example](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.7%20EC2%20-%20Metadata%20Example.png)
+
+- Dùng thông tin **EC2 Metadata** để thiết lập hostname cho EC2 Instance Linux với EC2 user data. 
+
+***Tại sao chúng ta cần EC2 - Metadata này?***
+- Giả sử bạn muốn triển khai một cái ứng dụng trên EC2 Instance của mình trong một môi trường tự động -> Chúng ta muốn lấy đúng cái Hostname của cái EC2 này thì phải thông qua Metadata để lấy được các thông tin cần lấy. 
+
+- EC2 Metadata thường được dùng trong việc tự động hóa, có những cái script no
+nó chạy sâu trong máy chủ chẳng hạn, làm sao để script biết được thông tin của chính nó. -> bằng cách thức lấy thông tin metadata thông qua URL nội bộ. 
+
+- Giả sử chúng ta chạy 1 cái script trong cái EC2 Instance Linux, muốn tăng dung lượng ổ cứng EBS -> Để muốn tăng được dung lượng phải thông qua Instance-ID thì mình mới chạy đúng câu lệnh để tăng dung lượng cho nó. 
+
+=> Cần metadata để thực hiện các công việc tự động hóa, để chạy được những câu lệnh bên trong EC2 Instance -> Lấy những thông tin liên quan đến nó ở bên ngoài, chứ không phải ở bên trong hệ điều hành. 
+
+
+
+
+
+
 
 ## **II. Amazon Lighsail**
 ## **III. Amazon EFS/FSX**
