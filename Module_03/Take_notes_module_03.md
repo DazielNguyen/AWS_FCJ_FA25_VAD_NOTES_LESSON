@@ -1,11 +1,11 @@
 # **Module 3 - Dịch vụ Compute VM trên AWS**
 ## **I. Amazon Elastic Compute Cloud (EC2)**
-### 1. Giới thiệu về EC2
+### **1. Giới thiệu về EC2**
 - **EC2** giống máy chủ ảo hoặc máy chủ vật lí truyền thống
 - **EC2** có khả năng *khởi tạo nhanh, khả năng co giãn tài nguyên mạnh mẽ, linh hoạt.*
 - **EC2** có thể hỗ trợ các workload như lưu trữ web, ứng dụng, cơ sở dữ liệu, dịch vụ xác thực và bất cứ công việc nào khác mà máy chủ thông thường có thể đáp ứng.
 
-### 2. EC2 - Instance Type
+### **2. EC2 - Instance Type**
 
 ***Link tham khảo:***
 (https://aws.amazon.com/ec2/instance-types/?ncl=h_ls)
@@ -23,7 +23,7 @@ lựa chọn các EC2 Instance type.
     + Network
     + Storage
 
-### 3. EC2 - AMI /Backup /Key Pair
+### **3. EC2 - AMI /Backup /Key Pair**
 - Sử dụng **AMI (Amazon Machine Image)** có thể **provision** ra -> **một hoặc nhiều EC2 Instances** cùng lúc. 
     + AMI có sẵn của AWS, trên AWS Market Place và custom AMI tự tạo từ EC2 Instances.
 - **AMI** bao gồm:
@@ -42,7 +42,7 @@ lựa chọn các EC2 Instance type.
 
 ![Module 3.3 EC2 Key Pair](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.3%20EC2%20Key%20Pair.png)
 
-### 4. EC2 - Elastic Block Store 
+### **4. EC2 - Elastic Block Store** 
 - **Amazon EBS** cung cấp block storage và được gán trực tiếp vào EC2 Instance , tuy được gán trực tiếp như 1 RAW device, EBS về bản chất hoạt động độc lập với EC2 và được kết nối thông qua mạng riêng của EBS.
 
 - **EBS** có hai nhóm đĩa chính là **HDD và SSD**, được thiết kế để đạt độ sẵn sàng 99.999% bằng cách **replicate dữ liệu giữa 3 Storage Node trong 1 AZ**.
@@ -62,7 +62,7 @@ lựa chọn các EC2 Instance type.
 - EBS được backup bằng cách thực hiện snapshot vào **S3 (Simple Storage Storage)**
 - Snapshot đầu tiên là **full**, tất cả các snapshot tiếp theo là **incremental**.
 
-### 5. EC2 - Instance Store 
+### **5. EC2 - Instance Store** 
 
 - **Instance store** là vùng đĩa **NVME** tốc độ cực cao, nằm trên physical node chạy các máy ảo
 EC2.
@@ -84,7 +84,7 @@ EC2.
     + buffer / cache
     + log
 
-### 6. EC2 - User data
+### **6. EC2 - User data**
 - **EC2 user data** là đoạn script chạy một lần khi provision EC2 Instance từ AMI.
 - Tùy hệ điều hành mà chúng ta sẽ sử dụng bash shell scripts (Linux) / powershell (Windows).
 - Bạn có thể kiểm tra user data của EC2 tại: http://169.254.169.254/latest/user-data.
@@ -93,7 +93,7 @@ EC2.
 
 ![Module 3.6 EC2 - User Data](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%203.6%20EC2%20-%20User%20Data.png)
 
-### 7. EC2 - Meta Data
+### **7. EC2 - Meta Data**
 - **EC2 Metadata** là các thông tin liên quan tới bản thân EC2 instances, ví dụ địa chỉ IP Private, Public, Hostname, Security Groups...
 - Kiểm tra Metadata: http://169.254.169.254/latest/meta-data/
 
@@ -113,7 +113,7 @@ nó chạy sâu trong máy chủ chẳng hạn, làm sao để script biết đ�
 
 => Cần metadata để thực hiện các công việc tự động hóa, để chạy được những câu lệnh bên trong EC2 Instance -> Lấy những thông tin liên quan đến nó ở bên ngoài, chứ không phải ở bên trong hệ điều hành. 
 
-### 8. EC2 - EC2 Auto Scaling 
+### **8. EC2 - EC2 Auto Scaling** 
 - **EC2 Auto Scaling** là tính năng hỗ trợ tăng giảm số lượng EC2 Instance dựa theo các điều kiện cụ thể (scaling policy) .
 - **EC2 Auto Scaling** có thế tự đăng ký các EC2 Instance vào Elastic Load Balancer.
 - **EC2 Auto Scaling** hoạt động trên nhiều AWS Availability Zone.
@@ -157,7 +157,7 @@ nó chạy sâu trong máy chủ chẳng hạn, làm sao để script biết đ�
    
     => Khi số lượng kết nối giảm, số instance sẽ được giảm xuống (scale in) để tiết kiệm chi phí.
 
-### 9. EC2 - Pricing Option
+### **9. EC2 - Pricing Option**
 - EC2 bao gồm **4 Options giá**: 
 
     1. **On-demand**: Trả theo giờ /phút /giây, sử dựng bao nhiêu tính tiền bấy nhiêu, gói mắc nhất. Phù hợp cho các workload chạy lên tới 6 tiếng 1 ngày. 
@@ -203,4 +203,29 @@ CPU cao liên tục > hơn 2 giờ mỗi ngày.
 - Lightsail Instance ngoài giá rẻ, nhưng data transfer trong mỗi Instance thì khá nhiều còn rẻ. 
 
 ## **III. Amazon EFS/FSX**
+### **1. EFS (Elastic File System)**
+- **EFS (Elastic File System)** cho phép tạo các NFSv4 Network volume (ổ cứng mạng) và gán nhiều vào EC2 Instance cùng lúc, quy mô lưu trữ lên đến hàng petrabyte. **EFS chỉ support Linux.** 
+
+- Sử dụng **EFS** chí tính chi phí theo **dung lượng sử dụng** (trong khi EBS tính phí theo dung lượng cấp phát.)
+
+- EFS có thể được cấu hình để mount vào môi trường on-premise qua DX (Direct Connect) hoặc VPN. 
+
+***Kiến trúc EFS***
+
+![Module 4.2 Kiến trúc EFS](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%204.2%20Ki%E1%BA%BFn%20tr%C3%BAc%20EFS.png)
+
+- Tạo ra Mount Target và Mapping với EFS thì trên EC2 có thể sử dụng được. 
+- Sử dụng Protocol NFS v4.
+
+### **2. FSx**
+- FSx cho phép tạo các NTFS volume và gán vào nhiều EC2 Instances cùng lúc sử dụng giao
+thức SMB ( Server Message Block ) , FSx support Windows và Linux.
+- Sử dụng FSx chỉ tính chi phí theo dung lượng sử dụng ( trong khi EBS tính phí theo dung
+lượng cấp phát ).
+- FSx hỗ trợ tính năng deduplication , giúp giảm chi phí 30- 50% cho các trường hợp sử dụng
+thông thường
+
+
+
 ## **IV. AWS Application Migration Service (MGN)**
+
