@@ -5,9 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 ### Mục tiêu tuần 2:
 
@@ -16,13 +13,13 @@ pre: " <b> 1.2. </b> "
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP <br>                    | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ 	| Công việc 	| Ngày bắt đầu 	| Ngày kết thúc 	| Nguồn tài liệu và ghi chú học tập 	|
+|---	|---	|---	|---	|---	|
+| 2 	| - Tìm hiểu về AWS Virtual Private Cloud (VPC)<br>   + VPC là gì? <br>   + Cấu trúc của VPC được hoạt động như thế nào?<br>- Tìm hiểu về VPC-Subnets và kiến trúc của Subnet?<br>- Tìm hiểu về VPC-Route Table?<br>- Tìm hiểu về VPC-ENI và kiến trúc của VPC-ENI?<br>- Tìm hiểu về VPC-Endpoint và kiến trúc của VPC-Endpoint?<br>- Tìm hiểu về VPC-Internet Gateway và kiến trúc của VPC-Internet Gateway?<br>- Tìm hiểu về VPC-NAT Gateway và kiến trúc của VPC-NAT Gateway?<br>- Tìm hiểu về VPC-Security Group và kiến trúc của VPC-Security Group?<br>- Tìm hiểu về VPC-NACL và kiên trúc của VPC-NACL?<br>- Tìm hiểu về VPC-Flow Logs 	| 15/09/2025 	| 15/09 	| Tài liệu: https://cloudjourney.awsstudygroup.com/<br>Youtube: https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV_<br>Ghi chú: https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Take_notes_module_02_01.md 	|
+| 3 	| - Tìm hiểu về các dịch vụ mạng trên AWS?<br>- Tìm hiểu về VPC Peering và kiến trúc của VPC Peering?<br>- Tìm hiểu về Transit Gateway và kiến trúc của Transit Gateway?<br>- Nắm rõ các khái niệm về dịch vụ VPN & Direct Connect?<br>- VPN Site to Site là gì? Việc thiết lập nó như thế nào?<br>- Tìm hiểu về VPN Client to Site?<br>- AWS Direct Connect là gì? 	| 16/09/2025 	|  	| Tài liệu: https://cloudjourney.awsstudygroup.com/<br>Youtube: https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV_<br>Ghi chú: https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Take_notes_module_02_01.md 	|
+| 4 	| - Tìm hiểu về các khái niệm và tổng quan về Elastic Load Balancing? Và các loại ELB hiện nay?<br>- Tìm hiểu về ELB - Application Load Balancer và kiến trúc của nó?<br>- Tìm hiểu về ELB - Network Load Balancer và nắm rõ khái niệm?<br>- Tìm hiểu về ELB - Classic Load Balancer và nắm rõ khái niệm?<br>- Tìm hiểu về ELB - ELB - Gateway Load Balancer và kiến trúc của nó? 	| 17/09/2025 	|  	| Tài liệu: https://cloudjourney.awsstudygroup.com/<br>Youtube: https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV_<br>Ghi chú: https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Take_notes_module_02_01.md 	|
+| 5 	| - Thực hành Lab 03<br>- Thực hành Lab 58<br>- Thực hành Lab 19 	| 18/09/2025 	|  	| Tài liệu: https://cloudjourney.awsstudygroup.com/<br>Youtube: https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV_<br>Ghi chú: https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Take_notes_module_02_01.md 	|
+| 6 	| - Thực hành Lab 20<br>- Thực hành Lab 10<br>- Nghiên cứu bổ sung về AWS Advanced Networking - Specialty Study Guide 	| 19/09/2025 	|  	| Tài liệu: https://cloudjourney.awsstudygroup.com/<br>Youtube: https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV_<br>Ghi chú: https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_01_VPC/Take_notes_module_02_01.md 	|
 
 ### Kết quả đạt được tuần 2:
 
