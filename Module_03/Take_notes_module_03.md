@@ -217,13 +217,19 @@ CPU cao liên tục > hơn 2 giờ mỗi ngày.
 - Tạo ra Mount Target và Mapping với EFS thì trên EC2 có thể sử dụng được. 
 - Sử dụng Protocol NFS v4.
 
-### **2. FSx**
-- FSx cho phép tạo các NTFS volume và gán vào nhiều EC2 Instances cùng lúc sử dụng giao
-thức SMB ( Server Message Block ) , FSx support Windows và Linux.
-- Sử dụng FSx chỉ tính chi phí theo dung lượng sử dụng ( trong khi EBS tính phí theo dung
-lượng cấp phát ).
-- FSx hỗ trợ tính năng deduplication , giúp giảm chi phí 30- 50% cho các trường hợp sử dụng
-thông thường
+### **2. Amazon FSx**
+- FSx cho phép tạo các NTFS volume và gán vào nhiều EC2 Instances cùng lúc sử dụng giao thức SMB ( Server Message Block ) ,FSx support Windows và Linux.
+
+- Sử dụng FSx chỉ tính chi phí theo dung lượng sử dụng ( trong khi EBS tính phí theo dung lượng cấp phát ).
+- FSx hỗ trợ tính năng deduplication , giúp giảm chi phí 30- 50% cho các trường hợp sử dụng thông thường
+    + **deduplication**: là một trong những tính năng hay của FSx, giúp giảm trùng lập dữ liệu và giảm được chi phí lưu trữ. 
+
+***Kiến trúc của FSx***
+
+![Module 4.3 Amazon FSx](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%204.2%20Ki%E1%BA%BFn%20tr%C3%BAc%20EFS.png)
+
+
+- FSx không khác gì nhiều so với EFS, chúng ta phải cần tạo một console riêng cho FSx. -> Tạo ta FSx File system. -> Thông qua SMB tới EC2. 
 
 
 
