@@ -231,7 +231,89 @@ CPU cao liên tục > hơn 2 giờ mỗi ngày.
 
 - FSx không khác gì nhiều so với EFS, chúng ta phải cần tạo một console riêng cho FSx. -> Tạo ta FSx File system. -> Thông qua SMB tới EC2. 
 
-
-
 ## **IV. AWS Application Migration Service (MGN)**
+### **1. Tổng quan về AWS Application Migration Service (MGN)**
+
+- **AWS Application Migration Service (MGN)** dùng để **migrate và replicate** phục vụ mục đích xây dựng **Disaster Recovery Site** cho các máy chủ thực, ảo lên môi trường AWS.
+
+- **Application Migration Service (MGN)** liên tục sao chép các máy chủ nguồn sang EC2 Instance trên tài khoản AWS **(asynchronous /synchronous).**
+
+- MGN trong quá trình sao chép sẽ sử dụng các máy staging có số lượng và quy mô cấu hình nhỏ hơn máy chủ gốc rất nhiều. -> Giúp giảm thiểu chi phí nếu như chúng ta muốn xây dựng **Disaster Recovery Site**
+
+- Khi thực hiện **cut-over** MGN sẽ tự động tạo và chạy các máy chủ EC2 trên AWS.
+
+=> **Hiểu cơ bản đó là một dịch vụ modernization hệ thống, chuyển từ môi trường truyền thống on-premise sang môi trường Clou.**
+
+
+***Kiến trúc của Amazon MGN***
+
+![Module 5.1 Amazon MGN](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%205.1%20Amazon%20MGN.png)
+
+- **Stagging:** Vùng đón dữ liệu -> Tạo ra Stagging Area (Tạo ra các máy chủ ảo có cấu hình nhỏ -> **1 Replication server** nó có thể support **25 máy chủ nguồn Source Machine**)
+
+- Những cái nội dung trong ổ đĩa ở **on-premise** sẽ được **relicate** lên -> **Stagging EBS volumes**. 
+
+- Cấu hình của **Source server** rất là to nhưng Stagging nó khá nhỏ nhưng vẫn cân được ,vì thế MGN giúp chúng ta tiết kiệm chi phí để xây dựng được 1 cái **Disaster Recovery** ,xây dựng được một môi trường có thể phục hồi nếu có sự cố xảy ra.
+
+- Chỉ tốn chi phí cho dịch vụ lưu trữ là nhiều. 
+
+- Từ các Stagging này thì chúng ta có thể **Launched** lên được Target EC2. Sau khi các máy chủ được khởi chạy lên thì chúng sẽ mapping với vùng -> EBS Volumes
+
+-  **MGN có 2 đặc điểm chính:**
+    + Giúp chúng ta chuyển từ on-premises lên AWS
+    + Giúp chúng ta tạo một môi trường Disaster Recovery ở trên Cloud với mức chi phí thấp. 
+
+_______________________________________________________________
+## **V. Thực hành và nghiên cứu bổ sung.** 
+
+### **Lab: 000004**
+ - Thao tác EC2 cơ bản.
+    + Tạo máy chủ EC2 
+    + Thực hiện snapshot EC2 Instance
+    + Cài đặt ứng dụng trên EC2
+
+### **Lab: 000027**
+ - Quản lí tài nguyên bằng Tag và Resource Group
+    + Sử dụng Tag
+    + Sử dụng Resource Group
+
+### **Lab: 000008**
+ - Quản lí tài nguyên với Amazon Cloud Watch
+    + CloudWatch Agent
+    + Tạo CloudWatch Dashboard 
+    
+### **Lab: 000006**
+ - Triển khai Autoscaling Group
+    + Khởi tạo Launch Template
+    + Khởi tạo Target Group
+    + Khởi tạo Load Balancer
+    + Khởi tạo Auto Scaling Group
+    + Kiểm tra kết quả. 
+### **Lab: 000045**
+ - Bắt đầu với Amazon Lightsail
+    + Chuẩn bị
+    + Kiểm tra ứng dụng trên Lightsail 
+    + Sử dụng Lightsail Loadbalancer
+    + Sử dụng RDS
+    + Dịch chuyển sang EC2.
+
+### **[Nghiên cứu bổ sung] - Microsoft Workloads on AWS**
+
+Link: [https://www.youtube.com/playlist?list=PLhr1KZpdzukdJ|IxuIUM7pMB7aJ2_FfTP]
+
+***Phần hướng dẫn của Tuần 3:***
+
+- Series các bài thực hành bố sung dành cho việc chạy các máy chủ và ứng dụng của Microsoft trên AWS
+
+- Bổ sung kiến thức về hệ điều hành 
+- Bổ sung các kiến thức về hệ điều hành Linux như LBI1, LBI2
+- Bổ sung các kiến thức về hệ điều hành Window học thêm về hệ thống quản trị Bundo. Tham khảo các series thực hành
+
+
+
+
+
+
+
+
 
