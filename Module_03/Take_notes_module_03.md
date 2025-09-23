@@ -175,10 +175,32 @@ nó chạy sâu trong máy chủ chẳng hạn, làm sao để script biết đ�
     + **On-Demand Instance /Spot Instance**: Ứng dụng thiết kế để có thể chịu lỗi, khi máy chủ bị stop bất ngờ, bị terminate.
 
 ## **II. Amazon Lighsail**
+- **Amazon Lightsail** là dịch vụ tính toán có chi phí thấp (giá tính theo tháng chỉ **bắt đầu từ 3,5$ /tháng**) ngoài ra mỗi Instance Lightsail tạo ra cũng sẽ có một mức data transfer đi kèm. (data transfer này có mức giá rẻ hơn data transfer từ EC2 tương đối nhiều).
 
+- **Amazon Lightsail** phù hợp cho các workload nhẹ, môi trường test dev, không yêu cầu tải
+CPU cao liên tục > hơn 2 giờ mỗi ngày.
 
+- **Amazon Lightsail** cũng có khả năng backup bằng snapshot tương tự như EC2. 
 
+- **Amazon Lightsail** chạy trong một VPC đặc biệt, có thể kết nối tới VPC thông thường qua 1 click VPC Peering. 
 
+***Kiến trúc Amazon Lightsail***
+
+![Module 4.1 Amazon Lightsail](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_03/Image_module_03/Module%204.1%20Amazon%20Lightsail.png)
+
+- Lightsail nó cũng giống như EC2 nhưng nó vẫn có sự khác biệt. 
+
+- Để kể nối giữa 2 máy chủ Lightsail và EC2 thì nó sẽ thông qua Peering connections 
+
+- Một click thì hai máy chủ kết nối với nhau
+
+- Amazon Light sail chạy trong một VPC đặc biệt, có thể kết nối tới VPC thông thường qua 1 click VPC Peering. 
+
+- Một đặc điểm của Lightsail đó là chúng ta có thể tạo ra snapshots của Lightsail Instance mà chúng ta có thể chuyển đổi thành EC2 Instance được luôn. 
+
+- Giả sử các demo của chúng ta khi chạy thử trên Lightsail khi đến một cái ngưỡng nhất định thì chúng ta có thể nâng cấp lên EC2. 
+
+- Lightsail Instance ngoài giá rẻ, nhưng data transfer trong mỗi Instance thì khá nhiều còn rẻ. 
 
 ## **III. Amazon EFS/FSX**
 ## **IV. AWS Application Migration Service (MGN)**
