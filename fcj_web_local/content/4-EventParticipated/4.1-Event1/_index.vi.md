@@ -1,29 +1,28 @@
 ---
 title: "Event 1"
-date: "2025-09-09"
+date: "2025-09-18"
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Bài thu hoạch “Migration & Modernization”
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Hoàn thành quá trình di chuyển và hiện đại hóa quy mô lớn với AWS
+- Hiện đại hóa ứng dụng bằng các công cụ hỗ trợ AI tạo sinh
+- Thảo luận nhóm: Hiện đại hóa ứng dụng: Đẩy nhanh quá trình chuyển đổi kinh doanh
+- Chuyển đổi VMware với công nghệ hiện đại hóa đám mây dựa trên AI
+- Bảo mật AWS ở quy mô lớn: Từ phát triển đến sản xuất
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **Nguyen Van Hai** - Director of Software Engineering, Techcombank
+- **Nguyen The Vinh** - Co-Founder & CTO, Ninety Eight
+- **Nguyen Minh Nganh** - AI Specialist, OCB
+- **Nguyen Manh Tuyen** - Head of Data Application, LPBank Securities
 
 ### Nội Dung Nổi Bật
 
