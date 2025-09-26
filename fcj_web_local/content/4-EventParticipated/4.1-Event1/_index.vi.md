@@ -26,7 +26,7 @@ pre: " <b> 4.1. </b> "
 
 ### Nội Dung Nổi Bật
 
-#### Tìm hiểu về các chiến lược di chuyển và hiện đại hóa quy mô lớn với AWS thông qua các nghiên cứu điển hình thực tế từ Techcombank.
+#### 1. Tìm hiểu về các chiến lược di chuyển và hiện đại hóa quy mô lớn với AWS thông qua các nghiên cứu điển hình thực tế từ Techcombank.
 - Chiến lược di chuyển và hiện đại hóa của Techcombank
   + **Assess**: Đánh giá được môi trường kiểm kê, và xác định được khoảng trống. 
   + **Mobilize**: Thiết lập CCoE, xác định hàng rào, xây dựng sự lưu loát của điện toán đám mây. 
@@ -56,7 +56,7 @@ pre: " <b> 4.1. </b> "
       |
       Reinvent: Data, AI và hiện đại hóa các ứng dụng cho sự đổi mới
 
-#### Tìm hiểu về việc hiện đại hóa ứng dụng bằng các công cụ Generative AI, với những hiểu biết thực tế từ VPBank
+#### 2. Tìm hiểu về việc hiện đại hóa ứng dụng bằng các công cụ Generative AI, với những hiểu biết thực tế từ VPBank
 
 - Hiện đại hóa là quá trình chuyển đổi dần dần các ứng dụng để đạt được lợi ích về tính khả dụng, khả năng mở rộng, tính linh hoạt trong kinh doanh và tối ưu hóa chi phí khi chạy trên nền tảng đám mây
 
@@ -129,7 +129,7 @@ pre: " <b> 4.1. </b> "
 
 - Thu hút và giữ chân nhân tài
 
-#### Nhận thông tin chuyên sâu từ các chuyên gia hàng đầu trong ngành thông qua các buổi thảo luận chuyên đề về hiện đại hóa ứng dụng
+#### 3. Nhận thông tin chuyên sâu từ các chuyên gia hàng đầu trong ngành thông qua các buổi thảo luận chuyên đề về hiện đại hóa ứng dụng
 **.NET Framework so với đa nền tảng .NET** 
 - **.NET Framework**: 
   + Chỉ hệ điều hành Windows
@@ -192,9 +192,55 @@ Nâng cấp Ngôn ngữ Tự động (Java, .NET)
 - Cấu hình cách bạn muốn các tác nhân Kiro tương tác với từng dự án thông qua các tệp chỉ đạo
 - Thả một hình ảnh về thiết kế Ul của bạn hoặc một bức ảnh về buổi thảo luận kiến ​​trúc của bạn và Kiro có thể sử dụng nó để hướng dẫn việc triển khai
 
-#### Tìm hiểu về hiện đại hóa đám mây dựa trên AI dành riêng cho môi trường VMware
+**Sức mạnh, tính linh hoạt và bảo mật**
+- Tương thích với VS code
+  + Kiro hỗ trợ plugin, theme và cài đặt VS Code Open VSX trong môi trường Al-ready được sắp xếp hợp lý
 
-#### Kết nối và học hỏi trực tiếp từ các Kiến trúc sư Giải pháp AWS và các chuyên gia trong ngành
+- Các mô hình Claude tiên tiến
+  + Lựa chọn giữa các mô hình Claude Sonnet 3.7 hoặc Sonnet 4, với nhiều tùy chọn hơn sẽ sớm được bổ sung
+
+- Bảo mật cấp doanh nghiệp
+  + Kiro được xây dựng và vận hành bởi AWS
+
+**Các trường hợp sử dụng**
+
+- Xây dựng ứng dụng mới
+  + Nhanh chóng chuyển từ nguyên mẫu sang mã sản xuất và triển khai, với các phương pháp hay nhất được tích hợp sẵn, bao gồm thiết kế có cấu trúc, tài liệu hướng dẫn hoặc phạm vi kiểm thử
+
+- Xây dựng trên các ứng dụng hiện có
+  + Với thông số kỹ thuật và quản lý ngữ cảnh thông minh, Kiro giúp bạn dễ dàng tích hợp và xây dựng trên các ứng dụng hiện có mà vẫn duy trì tính nhất quán
+
+- Tái cấu trúc và hiện đại hóa
+  + Kiro hiểu rõ cơ sở mã của bạn và có thể hướng dẫn bạn chính xác trong việc tái cấu trúc hơn một triệu cơ sở mã LOC
+  
+#### 4. Tìm hiểu về hiện đại hóa đám mây dựa trên AI dành riêng cho môi trường VMware
+
+**Trạng thái tương lai của khối lượng công việc VMware của bạn**
+   
+    RELOCATE: Amazon EVS
+    |
+    REHOST: Amazon EC2
+    |
+    REPLATFORM TO CONTAINERS: Amazon ECS or Amazon EKS
+    |
+    REPLATFORM TO MANAGED SERVICES: Amazon RDS, Amazon FSx, Amazon WorkSpaces, and more
+    |
+    REFACTOR: Modern Application
+
+    => Áp dụng nhanh chóng, nền tảng của lợi ích đám mây và ROI nhanh....................---->....................Tất cả các lợi ích gốc của đám mây và ROl cao
+
+**Chuyển đổi AWS cho VMware**
+
+- Hiện đại hóa khối lượng công việc VMware lên Amazon EC2 với các tác nhân AI được thiết kế riêng
+- Tự động hóa và đơn giản hóa các tác vụ chuyển đổi
+- Giảm chi phí và phí cấp phép với Amazon EC2
+- Nâng cao bảo mật, khả năng mở rộng và phục hồi
+- Thúc đẩy đổi mới với hơn 200 dịch vụ gốc của AWS
+
+**Lập bản đồ công nghệ gốc từ VMware sang AWS**
+
+!
+#### 5. Kết nối và học hỏi trực tiếp từ các Kiến trúc sư Giải pháp AWS và các chuyên gia trong ngành
 
 - 
 ### Những Gì Học Được
