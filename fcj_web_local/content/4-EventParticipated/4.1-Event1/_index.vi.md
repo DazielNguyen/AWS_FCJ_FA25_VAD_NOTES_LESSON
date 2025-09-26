@@ -239,7 +239,39 @@ Nâng cấp Ngôn ngữ Tự động (Java, .NET)
 
 **Lập bản đồ công nghệ gốc từ VMware sang AWS**
 
-!
+![VMware to AWS native technology mapping](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/fcj_web_local/static/images/4-EventParticipated/VMware%20to%20AWS%20native%20technology%20mapping.jpg)
+
+**Một cách tiếp cận dựa trên AI của agentic để hiện đại hóa VMware**
+
+    1. Kết nối với môi trường VMware của bạn
+    |
+    2. Phân tích khối lượng công việc, sự phụ thuộc và mức độ sẵn sàng
+    |
+    3. Chuyển đổi cấu hình mạng VMware sang các cấu trúc AWS gốc
+    |
+    4. Tạo các kế hoạch sóng thông minh dựa trên sự phụ thuộc của ứng dụng
+    |
+    5. Xác thực với nhóm của bạn, sau đó thực hiện
+
+    => Chuyển đổi từng bước với xác thực human-in-the-loop
+
+**Lí do AWS Transform dành cho việc di chuyển sang VMware?**
+- **Chi phí thấp hơn**
+  + Loại bỏ phí cấp phép VMware
+  + Tối ưu hóa chi phí cơ sở hạ tầng với khả năng điều chỉnh kích thước phiên bản do AI điều khiển
+
+- **Di chuyển nhanh hơn**
+  + Tăng tốc chuyển đổi mạng lên đến 80 lần
+Giảm thiểu gián đoạn, bảo toàn tính toàn vẹn của ứng dụng và đẩy nhanh quá trình chuyển đổi
+
+- **Cải thiện bảo mật**
+  + Tăng cường bảo mật với nền tảng đám mây gốc
+  + Di chuyển an toàn với quy trình xác thực human-in-the-loop
+
+- **Đổi mới ở quy mô lớn**
+  + Giảm nợ kỹ thuật và xây dựng các ứng dụng hiện đại, có khả năng mở rộng
+  + Tích hợp liền mạch với hơn 200 dịch vụ gốc của AWS như data lakes, phân tích nâng cao và AI/ML
+
 #### 5. Kết nối và học hỏi trực tiếp từ các Kiến trúc sư Giải pháp AWS và các chuyên gia trong ngành
 
 - 
