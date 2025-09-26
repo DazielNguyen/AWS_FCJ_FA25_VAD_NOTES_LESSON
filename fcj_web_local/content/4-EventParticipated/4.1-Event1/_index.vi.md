@@ -239,7 +239,7 @@ Nâng cấp Ngôn ngữ Tự động (Java, .NET)
 
 **Lập bản đồ công nghệ gốc từ VMware sang AWS**
 
-![VMware to AWS native technology mapping](/fcj_web_local/static/images/4-EventParticipated/VMware%20to%20AWS%20native%20technology%20mapping.jpgfcj_web_local/static/images/4-EventParticipated/VMware to AWS native technology mapping.jpg)
+<img src="/images/4-EventParticipated/VMware to AWS native technology mapping.jpg" alt="VMware to AWS native technology mapping" width="1000"/>
 
 **Một cách tiếp cận dựa trên AI của agentic để hiện đại hóa VMware**
 
@@ -337,9 +337,7 @@ Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải 
 
 #### Một số hình ảnh khi tham gia sự kiện
 
-- Thêm các hình ảnh của các bạn tại đây
-
-![VietNam Cloud Day 2025](/fcj_web_local/static/images/4-EventParticipated/event%20aws.jpgfcj_web_local/static/images/4-EventParticipated/event aws.jpg)
+<img src="/images/4-EventParticipated/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
 
   > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
 
