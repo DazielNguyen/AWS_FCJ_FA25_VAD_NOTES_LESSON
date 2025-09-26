@@ -129,16 +129,70 @@ pre: " <b> 4.1. </b> "
 
 - Thu hút và giữ chân nhân tài
 
-
-
-
-
 #### Nhận thông tin chuyên sâu từ các chuyên gia hàng đầu trong ngành thông qua các buổi thảo luận chuyên đề về hiện đại hóa ứng dụng
+**.NET Framework so với đa nền tảng .NET** 
+- **.NET Framework**: 
+  + Chỉ hệ điều hành Windows
+  + Phiên bản 1.0 được phát hành vào năm 2002
+  + Phiên bản cuối cùng là 4.8*, phát hành năm 2019
+  + Cài đặt nguyên khối - Số lượng lớn các thư viện được cài đặt cùng một lúc. 
+  + EC2, Elastic Beanstalk, ECS và EKS. 
 
-- 
+- **.NET (trước đây là .NET Core)**
+  + Đa nền tảng (Windows, Linux, MacOS)
+  + Phiên bản 1.0 được phát hành năm 2016
+  + Phiên bản GA hiện tại là 8.0, được phát hành vào năm 2023
+  + Hỗ trợ nhiều phiên bản để cài đặt
+  + Hầu hết các thư viện được phân phối riêng lẻ 
+  + EC2, Elastic Beanstalk, ECS, EKS, Lambda
+  + Fargate
+
+**AWS Transform: Trí thông minh được phối hợp**
+
+  + Trải nghiệm web thống nhất -> Tự động hóa đầu cuối -> Cơ quan chuyên trách -> Định hướng mục tiêu -> Con người trong vòng lặp -> Hợp tác được đơn giản hóa
+
+**AWS Transform cho .NET** 
+
+- **Lợi ích khách hàng**
+  + Giảm chi phí vận hành lên đến 40%
+  + Loại bỏ thương mại giấy phép hệ điều hành 
+  + Tiếp cận nhóm nhà phát triển lớn hơn
+  + Quy mô đám mây và hiệu suất. 
+
+- **Lợi ích kỹ thuật**
+  + Hỗ trợ khắc phục lỗ hổng bảo mật
+  + Hỗ trợ đa nền tảng: Windows, macOS, Linux (x86-64, arm64)
+  + Tương thích với x86-64 và arm64
+  + LightweightContainer
+  + Kiến trúc Lambda Serverless
+
+**Hoàn thành nâng cấp ngôn ngữ trong vài phút thông qua Amazon Q**
+- Đẩy nhanh hiện đại hóa ứng dụng
+Nâng cấp Ngôn ngữ Tự động (Java, .NET)
+- Giảm Nợ Kỹ thuật
+- Tiết kiệm Chi phí và Hiệu quả Vận hành
+- Nâng cao Lợi thế Cạnh tranh
+
+**Ứng dụng Kiro**: Giải pháp cho việc phát triển theo thông số kĩ thuật
+
+- Kiro giúp các nhà phát triển và nhóm kỹ thuật vận chuyển phần mềm chất lượng cao với các tác nhân AI.
+- Kiro biến lời nhắc của bạn thành các yêu cầu rõ ràng, thiết kế hệ thống và các nhiệm vụ riêng biệt
+- Lặp lại với Kiro trên thông số kỹ thuật và kiến ​​trúc của bạn
+- Các tác nhân Kiro triển khai thông số kỹ thuật trong khi vẫn giúp bạn kiểm soát.
+
+**Agent hook**
+
+- Phân quyền các tác vụ cho các tác nhân Al được kích hoạt khi có sự kiện như 'lưu tệp'
+- Các tác nhân tự động thực thi ở chế độ nền dựa trên các lời nhắc được xác định trước của bạn
+- Các hook tác nhân giúp bạn mở rộng quy mô công việc bằng cách tạo tài liệu, kiểm tra đơn vị hoặc tối ưu hóa hiệu suất mã
+
+**Quản lí ngữ cảnh nâng cao**
+
+- Kết nối với tài liệu, cơ sở dữ liệu, API và nhiều hơn nữa với tích hợp MCP gốc
+- Cấu hình cách bạn muốn các tác nhân Kiro tương tác với từng dự án thông qua các tệp chỉ đạo
+- Thả một hình ảnh về thiết kế Ul của bạn hoặc một bức ảnh về buổi thảo luận kiến ​​trúc của bạn và Kiro có thể sử dụng nó để hướng dẫn việc triển khai
+
 #### Tìm hiểu về hiện đại hóa đám mây dựa trên AI dành riêng cho môi trường VMware
-
-- 
 
 #### Kết nối và học hỏi trực tiếp từ các Kiến trúc sư Giải pháp AWS và các chuyên gia trong ngành
 
@@ -207,3 +261,4 @@ Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải 
 
 - Thêm các hình ảnh của các bạn tại đây
   > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+
