@@ -273,60 +273,74 @@ Giảm thiểu gián đoạn, bảo toàn tính toàn vẹn của ứng dụng v
 
 #### 5. Kết nối và học hỏi trực tiếp từ các Kiến trúc sư Giải pháp AWS và các chuyên gia trong ngành
 
-- 
+- Phần này các chuyên gia đưa ra những vấn đề khó khăn khi những bước đầu triển khai hiện đại hóa toàn bộ hệ thống từ on-premises lên AWS. 
+
+  + Họ đưa ra những kế hoạch và chiến lược cụ thể ở từng phần, và họ chuyển những phần quan trọng nhất và thực hiện nó trước. 
+  + Trong đó họ cũng tuân thủ các quy định và luật pháp hiện hành trong việc quản lí và không thu thập thông tin người dùng. 
+  + Khi họ đưa lên AWS điều quan trọng nhất là họ có thể mở rộng quy mô của mình rất nhanh, và do đó họ nhận được rất nhiều lợi nhuận khi chuyển lên môi trường AWS. 
+  + Và việc ứng dụng AI hiện nay rất hiệu quả trong công việc kinh doanh của họ, như anh Vinh đã ứng dụng AI trong việc nhận biết những giao dịch có khả năng lừa đảo, chống Hacker trong Blockchain. 
+
 ### Những Gì Học Được
+
+- Khung 5 bước: **Align → Assess → Mobilize → Modernize → Reinvent**.
+- **GenAI-assisted modernization**: code transformation (Java 8→21, .NET→8), dependency mapping, environment assessment.
+- Ưu tiên **workloads tác động cao**, **human-in-the-loop**, đo **ROI**.
 
 #### Tư Duy Thiết Kế
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Problem→Pilot→Scale**; ưu tiên **value-first**.
+- **Strangler Fig** refactor từng phần; **event-driven** mindset.
+- **Platform thinking/IDP**, **security-by-design**, **governance** sớm.
+
 
 #### Kiến Trúc Kỹ Thuật
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- **Microservices**, **containers (EKS/ECS/Fargate)**, **serverless (Lambda/Step Functions/EventBridge)**.
+- **Data**: Aurora MySQL, MSK (Kafka), ElastiCache (Redis).
+- **VMware→AWS**: rehost EC2 → replatform containers/managed → refactor app.
+- **Multi-arch** (x86_64 + **ARM64**), **observability** end-to-end.
 
 #### Chiến Lược Hiện Đại Hóa
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- **Assess/Mobilize/MM/Reinvent** (Techcombank blueprint).
+- **AWS Transform**: for **VMware** & **.NET** (tự động hóa di trú/kiểm thử/UL modernization).
+- **Cost-first**: bỏ license Windows/SQL, right-size, ARM64.
+- **Scale & Innovate**: tách monolith, automation CI/CD, adopt GenAI.
 
 ### Ứng Dụng Vào Công Việc
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+- Lập **migration backlog** theo ROI; chọn **pilot** nhỏ.
+- Chuẩn hóa **container baseline** (EKS) + **Bedrock pattern** cho GenAI.
+- Dùng **Amazon Q/Transform** để **nâng cấp ngôn ngữ** & **refactor** nhanh.
+- Thiết kế **IDP** nội bộ: template dịch vụ, golden path, policy guardrails.
 
 ### Trải nghiệm trong event
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+ “**GenAI-powered Migration & Modernization** mang lại cái nhìn toàn diện về cách chuyển đổi ứng dụng & DB ở quy mô doanh nghiệp. Điểm nổi bật: demo tự động hóa di chuyển VMware/.NET, kiến trúc tham chiếu serverless–container, bài học định lượng ROI và mô hình governance thực chiến, cùng case study giúp rút ngắn thời gian di chuyển và giảm chi phí đáng kể.”
 
 #### Học hỏi từ các diễn giả có chuyên môn cao
 
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+- **Techcombank**: vận hành theo **CCoE**, đo **business outcomes**, lộ trình 5 bước.
+- **Ninety Eight**: **AI chống gian lận**, **security posture** mạnh, realtime.
+- **OCB/LPBankS**: **data products**, **automation**, **cloud scale** an toàn.
+
 
 #### Trải nghiệm kỹ thuật thực tế
 
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+- Thấy rõ **dependency mapping**, **wave planning**, **auto SG/EC2 sizing**, **hub-and-spoke VPC**.
+- **Auto code upgrade**, **cross-platform .NET**, **UI modernization** tự động.
 
 #### Ứng dụng công cụ hiện đại
 
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+- **AWS Transform** (VMware/.NET), **Amazon Q** (auto language upgrade).
+- **Bedrock**, **Lambda**, **ECS/Fargate**, **EKS**, **Step Functions**, **EventBridge**.
+- **Aurora**, **MSK**, **ElastiCache**, **EC2**; **IDP** tooling; **Kiro** (spec→tasks/agents, MCP).
 
 #### Kết nối và trao đổi
 
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+- Chốt **best practices** từ SA & ngân hàng lớn; checklist **governance/security**.
+- Kết nối để **mentorship**, **pattern reuse**, **đối chiếu ROI** & **benchmark**.
+- Event tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
 
 #### Bài học rút ra
 
@@ -334,9 +348,18 @@ Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải 
 - Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
 - Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
 
+- **Modernize có chiến lược**: đo lường ROI, ưu tiên theo giá trị.
+- **Tự động hóa + GenAI** rút ngắn thời gian, giảm nợ kỹ thuật.
+- **Platform/IDP** là đòn bẩy quy mô; **security-by-default** không thể thiếu.
+- **Human-in-the-loop** đảm bảo an toàn khi tự động hóa diện rộng.
+
+
 #### Một số hình ảnh khi tham gia sự kiện
 
 <img src="/images/4-EventParticipated/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
+  
+  > Hơn 400 nhà phát triển công nghệ đầy nhiệt huyết tại Thành phố Hồ Chí Minh, văn phòng AWS (Tầng 36) đã tụ họp để theo dõi phiên họp toàn thể trực tiếp từ Hà Nội, cùng chia sẻ sự phấn khích và kiến ​​thức về AWS Cloud Day Vietnam 2025
 
-  > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+  > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team. 
+
 
