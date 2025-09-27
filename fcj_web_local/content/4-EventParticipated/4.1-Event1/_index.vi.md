@@ -26,7 +26,7 @@ pre: " <b> 4.1. </b> "
 ### Nội Dung Nổi Bật
 
 #### 1. Tìm hiểu về các chiến lược di chuyển và hiện đại hóa quy mô lớn với AWS thông qua các nghiên cứu điển hình thực tế từ Techcombank.
-- Chiến lược di chuyển và hiện đại hóa của Techcombank
+- Hành trình hiện đại hóa của Techcombank
   + **Assess**: Đánh giá được môi trường kiểm kê, và xác định được khoảng trống. 
   + **Mobilize**: Thiết lập CCoE, xác định hàng rào, xây dựng sự lưu loát của điện toán đám mây. 
   + **Migrate & Modernize**: Ưu tiên khối lượng công việc có tác động cao
@@ -43,17 +43,19 @@ pre: " <b> 4.1. </b> "
   + Amazon MSK 
   + Amazon ElastiCache for Redis OSS. 
 
-- Tổng quan về chiến lược Modernization Strategy Blueprint.
-        
-      Align: Tài trợ việc triển khai và động lực doanh nghiệp.
-      |
-      Assess: Hiểu rõ về con người, quy trình, và công nghệ
-      |
-      Mobilize: CoE, quản trị, đào tạo
-      |
-      Modernize: Replatform, refactor, rebuild
-      |
-      Reinvent: Data, AI và hiện đại hóa các ứng dụng cho sự đổi mới
+- Tổng quan về chiến lược Modernization Strategy Blueprint. Hiện đại hóa với các công nghệ gốc của AWS.
+    
+  ```
+  Align: Tài trợ việc triển khai và động lực doanh nghiệp.
+  |
+  Assess: Hiểu rõ về con người, quy trình, và công nghệ
+  |
+  Mobilize: CoE, quản trị, đào tạo
+  |
+  Modernize: Replatform, refactor, rebuild
+  |
+  Reinvent: Data, AI và hiện đại hóa các ứng dụng cho sự đổi mới
+  ```
 
 #### 2. Tìm hiểu về việc hiện đại hóa ứng dụng bằng các công cụ Generative AI, với những hiểu biết thực tế từ VPBank
 
@@ -279,6 +281,8 @@ Giảm thiểu gián đoạn, bảo toàn tính toàn vẹn của ứng dụng v
   + Trong đó họ cũng tuân thủ các quy định và luật pháp hiện hành trong việc quản lí và không thu thập thông tin người dùng. 
   + Khi họ đưa lên AWS điều quan trọng nhất là họ có thể mở rộng quy mô của mình rất nhanh, và do đó họ nhận được rất nhiều lợi nhuận khi chuyển lên môi trường AWS. 
   + Và việc ứng dụng AI hiện nay rất hiệu quả trong công việc kinh doanh của họ, như anh Vinh đã ứng dụng AI trong việc nhận biết những giao dịch có khả năng lừa đảo, chống Hacker trong Blockchain. 
+
+#### 6. Hiểu các phương pháp hay nhất về bảo mật AWS từ phát triển đến môi trường sản xuất
 
 ### Những Gì Học Được
 
